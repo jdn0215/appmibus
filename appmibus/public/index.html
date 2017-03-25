@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>MI BUS</title>
+		<!-- CSS -->
+		<link rel="stylesheet" href="./style/map.css" type="text/css" media="all" />
+		<!---JQuery -->
+		<script src="./js/jquery-3.1.1.min.js" type="text/javascript"></script>  
+		<!---Bootstrap -->
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+		<!---Local -->
+		<script type="text/javascript" src="./js/values.js"></script>
+		<script type="text/javascript" src="./js/marcas.js"></script>
+		<script type="text/javascript" src="./js/initMap.js"></script>
+		<script type="text/javascript" src="./js/Proxy.js"></script>
+		<script type="text/javascript" src="./js/Events.js"></script>
+		<!---MAPS -->
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUt_gxL_oLlO7ts9o7e7aKHC6Y4c5rVm4">
+		</script>
+		<!--- meta -->
+		<link rel="shortcut icon" type="image/x-icon" href="./style/imgs/favicon.ico" />
+		<meta charset="ISO-8859-1">
+		<!---manejo de medidas en disposiivo movil--->
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
+	</head>	
+	<body>
+		<div id="wrapper">
+			<div id="map"></div>
+			<div id="panel">
+				<button id="addRegistro" data-placement="bottom" data-title="Crear Reporte"class="botonPanel">Crear Reporte</button>
+				<button id="buscaRegistro" class="botonPanel">Buscar</button>
+			</div>
+			<div id="mensaje" class="noVisible">
+				<p id="txtMensaje">hola mundo</p>
+			</div>
+		</div>
+	<body>
+</html>
