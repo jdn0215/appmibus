@@ -33,9 +33,7 @@
 	//$("#hello")[0].innerHTML=response.status;
     if (response.status === 'connected') {
 		getFacebookData();
-		$("#wrapper")[0].className="";
-		$("#FBlogin")[0].className="noVisible";
-		init();
+		toMap();
     } else {
     	callback(false);
    
@@ -54,11 +52,16 @@ var getFacebookData  = function (){
 		//$("#hello")[0].innerHTML=response.status;
 		$('#login').after(div_session);
 		$('#login').remove();
-		$('#facebook-session strong').text("Bienvenido: "+ response.name);
-		$('#facebook-session img').attr('src', 'http://graph.facebook.com/'+response.id+ '/picture?type=large');
-
+		toMap();
 	})
 }
+
+const toMap=()=>{
+	$("#wrapper")[0].className="";
+	$("#FBlogin")[0].className="noVisible";
+	init();
+}
+
 
 var facebookLogin = function(){
 	checkLoginState(function(response) {

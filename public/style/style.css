@@ -1,9 +1,9 @@
 #panel{
 	position:fixed;
 	left:42%;
-	top:5%;
+	bottom:5%;
 	display:inline-block;
-	width:60%;
+	width:100%;
 }
 
 
