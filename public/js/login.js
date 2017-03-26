@@ -79,6 +79,7 @@ var facebookLogout = function() {
 			FB.logout(function(res){
 				$('#facebook-session').before(btn_login);
 				$('#facebook-session').remove();
+				location.reload();
 			})
 		}
 	});
@@ -93,8 +94,9 @@ var facebookLogout = function() {
 
 	    $(document).on('click', '#logout', function(e){
 			e.preventDefault();
-	  	if(confirm("¿Estas seguro?"))
-	  	facebookLogout();
+	  	if(confirm("¿Estas seguro?")){
+			facebookLogout();
+		}
 	  	else
 	  		return false;
 	  })
