@@ -3,10 +3,11 @@
 	text-align: center;
 	width: 100%;
 	height: 100%;
-	background-image: url("imgs/fondo.jpg");
 	color: #FFF;
 }
-
+body{
+	background-image: url("imgs/fondo.jpg");
+}
 #FBlogin h1{
 	margin-bottom: 40px;
 }
