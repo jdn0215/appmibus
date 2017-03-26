@@ -46,7 +46,7 @@ const addLogOut=()=>{
 
 
 const popOverAdd=()=>{
-	$("#"+botonBuscar).popover({
+	$("#"+botonAdd).popover({
 		html:true,
 		placement:'top',
 		callback:()=>{initEventsAdd();}
