@@ -1,0 +1,26 @@
+#FBlogin{
+	margin: 100px auto;
+	text-align: center;
+	width: 400px auto;
+}
+
+#FBlogin h1{
+	margin-bottom: 40px;
+}
+
+#FBlogin strong, #FBlogin img{
+
+	display: block;
+}
+
+#FBlogin img{
+
+	margin: 0 auto;
+	border-radius: 10px;
+}
+
+#FBlogin #logout{
+
+margin-top: 10 px;
+
+}

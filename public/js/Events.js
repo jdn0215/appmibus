@@ -10,7 +10,7 @@ var aux=true;
 var aux2=true;
 /******************************************************/
 
-$(document).ready(()=>{
+const init=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	$("#"+botonAdd).click(()=>popOverAdd());
 	$("#"+botonAdd)[0].click();
