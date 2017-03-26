@@ -36,7 +36,6 @@ const addLogOut=()=>{
 		()=>{
 			try{
 				let logoutB = $("#logout")[0];
-				logoutB.className+=" rojo";
 				$("#panel")[0].appendChild(logoutB);
 				clearInterval(intervarl);
 			}catch(e){}
