@@ -32,7 +32,7 @@ const init=()=>{
 };
 
 const addLogOut=()=>{
-	var intervarl(
+	var intervarl=setInterval(
 		()=>{
 			try{
 				let logoutB = $("#logout")[0];
