@@ -15,6 +15,9 @@ const init=()=>{
 	$("#"+botonAdd).click(()=>popOverAdd());
 	$("#"+botonAdd)[0].click();
 	$("#"+botonBuscar).click(()=>popOverBuscar());
+	let logoutB = $("#logout")[0];
+	logoutB.className+=" rojo";
+	$("#panel")[0].appendChild(logoutB);
 	initMap();
 	setInterval(()=>{
 		if(current !== null && current !== undefined){ //evitar que haga feo hasta que todo este listo

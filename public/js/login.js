@@ -92,8 +92,7 @@ var facebookLogout = function() {
 	  })
 
 	    $(document).on('click', '#logout', function(e){
-	  	e.preventDefault();
-
+			e.preventDefault();
 	  	if(confirm("¿Estas seguro?"))
 	  	facebookLogout();
 	  	else
