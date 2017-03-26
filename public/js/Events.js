@@ -13,7 +13,6 @@ var aux2=true;
 const init=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	$("#"+botonAdd).click(()=>popOverAdd());
-	$("#"+botonAdd)[0].click();
 	$("#"+botonBuscar).click(()=>popOverBuscar());
 	initMap();
 	setInterval(()=>{
