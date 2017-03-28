@@ -1,12 +1,13 @@
 class Marca{
-	constructor(lat=0,lng=0,origen="highway",destino="hell",estado="",info="",time=new Date()){
-		this.lat=lat;
-		this.lng=lng;
-		this.origen=origen;
-		this.destino=destino;
-		this.estado=estado;
-		this.info=info;
-		this.time= time;
+	constructor(lat=0,lng=0,origen="highway",destino="hell",estado="",info="",time=new Date(),usuario){
+		this.lat     = lat;
+		this.lng     = lng;
+		this.origen  = origen;
+		this.destino = destino;
+		this.estado  = estado;
+		this.info    = info;
+		this.time    = time;
+		this.usuario = usuario;
 	}
 };
 
