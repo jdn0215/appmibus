@@ -9,10 +9,10 @@ class Marca{
 		this.time    = time;
 		this.usuario = usuario;
 	}
-	static to(v){
+	static from(v){
 		return new Marca(v.lat,v.lng,v.origen,v.destino,v.estado,v.info,v.time,v.usuario);
 	}
-	static from(v){
+	static to(v){
 		return {
 			_class :"Marca",
 			lat    :v.lat,
