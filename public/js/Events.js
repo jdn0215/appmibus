@@ -111,7 +111,7 @@ const changeColorBorder=(id,state=false)=> $("#"+id)[0].style=state?"":"border:m
 
 
 	
-const fMensaje=(texto,delay=2000)=>{
+const fMensaje=(texto,delay=7000)=>{
 	$("#"+mensajetxt)[0].innerHTML=texto;
 	$("#"+mensaje).show("slow","swing",()=>
 		$("#"+mensaje).hide(delay)
