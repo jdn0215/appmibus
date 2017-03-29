@@ -104,7 +104,7 @@ const validar=()=>{
 }	
 
 	
-const changeColorBorder=(id,estate=false)=> $("#"+id)[0].style=state?"":"border:medium double red;";
+const changeColorBorder=(id,state=false)=> $("#"+id)[0].style=state?"":"border:medium double red;";
 ////////////////////////////////////////////////////////////////////////////////////
 
 
