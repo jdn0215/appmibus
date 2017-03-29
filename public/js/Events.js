@@ -62,21 +62,53 @@ const initEventsAdd=()=>{
 };
 
 const addReporte=()=>{
-	marcasObjs.push(createReporte());
+	let reporte = createReporte();
+	if(reporte === false ) return;
+	proxy.proxy('save',res=>{
+		let r = res.mj;
+		fMensaje(     r===success ? mj_Add_succes
+				:errConectClientM ? mj_Add_ERR_DB
+				:        errTrans ? mj_Add_ERR_SR
+				:                   mj_Add_ERR_UNK
+				);
+	},reporte);
+	marcasObjs.push(reporte);
 	aux = true;
 	aux2 = true;
 	$("#addCancel")[0].click();
 };
-const createReporte=()=> new Marca(
-	current.position.lat(),
-	current.position.lng(),
-	$("#addOrigen").val(),
-	$("#addDestion").val(),
-	$("#addQuePasa").val(),
-	$("#addExtra").val()
-);
-	
 
+
+///////////////////////***creacíon del reporte****************////////////////////
+const createReporte=()=>
+	validar()?
+	new Marca(
+		current.position.lat(),
+		current.position.lng(),
+		$("#addOrigen").val(),
+		$("#addDestion").val(),
+		$("#addQuePasa").val(),
+		$("#addExtra").val()
+	):false;
+	
+const validar=()=>{
+	let inputs=["addOrigen","addDestion","addExtra"];
+	let result = true;
+	inputs.forEach(e=>{
+		if($("#"+e).val()===""){
+			result = false;
+			changeColorBorder(e);
+		}else changeColorBorder(e,true);
+	});
+	return result;
+}	
+
+	
+const changeColorBorder=(id,estate=false)=> $("#"+id)[0].style=state?"":"border:medium double red;";
+////////////////////////////////////////////////////////////////////////////////////
+
+
+	
 const fMensaje=(texto,delay=2000)=>{
 	$("#"+mensajetxt)[0].innerHTML=texto;
 	$("#"+mensaje).show("slow","swing",()=>

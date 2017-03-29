@@ -4,6 +4,11 @@
 	marcasObjs=[],
 	infoWindows=[];
 	
+const errConectClientM= -1;
+const errTrans        = -2;
+const success         =  0;
+
+	
 const responseStatusMin=200,
 	responseStatusMax=300,
 	zoomMap=17,
@@ -21,7 +26,11 @@ const responseStatusMin=200,
 	error2 = "Posicon invalida, ha ocurrido algún problema al obtener su posición",
 	error3 = "Su posición tardo demasiado en ser obtenida",
 	timeUpdate=500,
-	precisionGeo=9;
+	precisionGeo=9,
+	mj_Add_succes="El reporte se ha creado con éxtio",
+	mj_Add_ERR_DB="Ha ocurrido un problema con la base de datos, por favor intente de nuevo",
+	mj_Add_ERR_SR="Ha ocurrido un problema con la conexión al servidor, verifique la conexión o intente recargar la página",
+	mj_Add_ERR_UNK="Ha ocurrido un error desconocido, intentelo nuevamente";
 	
 	
 	

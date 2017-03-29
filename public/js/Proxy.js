@@ -1,52 +1,35 @@
-/**
-	responseStatusMin,responseStatusMax
-*/
-const checkStatus=(response)=>{
-	if (response.status >= responseStatusMin && response.status < responseStatusMax) 
-		return response;
-	let error = new Error(response.statusText);
-	error.response = response;
-	throw error;
-}
-const objectText = result => result.text();
-const parseJson = result => JSON.parse(result);
-const result = result => result;
 class $Proxy{
     constructor(){
         
     };
-    post(accion="",...args){
-		fetch(accion,
-			{  
-			method:"post", 			
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(
-				args.reduce((a,e,i)=>(a['arg'+i]=e,a),{})
-			)
-		}
-		).then(objectText)
-		 .then(parseJson)
-		 .then(result=>alert(result.mj));
+	proxy(accion="-",callBack,...ars){
+		let AJAX_req=new XMLHttpRequest();
+		let url = "api/"+ accion;
+		AJAX_req.open("POST",url,true);
+        AJAX_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		AJAX_req.onreadystatechange = () => {
+            if( AJAX_req.readyState === 4 && AJAX_req.status === 200 ){
+                let jsonText=AJAX_req.responseText;
+                let status = JSON.parse( jsonText,this.revive );
+                callBack(status);
+            }
+        };
+		let prms = this._package(ars);
+		AJAX_req.send(prms);
 	}
-	get(accion="",callBack){
-		fetch(accion, {  
-			method: 'get'	,
-			headers: {
-				'Accept': 'application/json',
-				'Content-Type': 'application/json'
-			}			
-		}).then(checkStatus)
-		  .then(objectText)
-		  .then(parseJson)
-		  .then(result => callBack(result));
+	_package(args=[]){
+		return args.reduce(
+			(a,e,i)=>(
+				a+=((i!==0?"&":"") + ("arg"+i) + "=" + JSON.stringify(e,this.replacer) ))
+			,"");
 	}
-
+	revive(k,v){
+		return (v instanceof Object && v._class === 'Marca') ? Marca.from(v) : v;
+	}
+	replacer(k,v){
+		return (v instanceof Marca) ? Marca.to(v) : v;
+	}
+	
 };
 const proxy = new $Proxy();
-
-
-
-
+	
