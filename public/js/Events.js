@@ -92,7 +92,7 @@ const createReporte=()=>
 	):false;
 	
 const validar=()=>{
-	let inputs=["addOrigen","addDestion","addExtra"];
+	let inputs=["addOrigen","addDestion","addQuePasa"];
 	let result = true;
 	inputs.forEach(e=>{
 		if($("#"+e).val()===""){
