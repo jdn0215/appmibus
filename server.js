@@ -81,7 +81,7 @@ router.route('/save').post((req,res)=>{
 		    obj = req.body;
 		let nuevaMarca = obj.arg0;
 		console.log("Dato para insertar: "+nuevaMarca);
-		
+		nuevaMarca = JSON.parse(nuevaMarca);
 		if(nuevaMarca._class!== "Marca" || nuevaMarca.usuario=== null){
 			console.log("objeto no definido o usuario no especificado");
 			return res.json({mj:errTrans});
@@ -90,7 +90,7 @@ router.route('/save').post((req,res)=>{
 		nuevaMarca.time = new Date();
 		
 		collection.remove();
-		collection.insert(JSON.parse(nuevaMarca),(err,result)=>{
+		collection.insert(nuevaMarca,(err,result)=>{
 			if(err){
 				console.log("ERROR AL INSERTAR");
 				res.json({mj:errTrans});
