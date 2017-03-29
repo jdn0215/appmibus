@@ -30,7 +30,8 @@ const responseStatusMin=200,
 	mj_Add_succes="El reporte se ha creado con éxtio",
 	mj_Add_ERR_DB="Ha ocurrido un problema con la base de datos, por favor intente de nuevo",
 	mj_Add_ERR_SR="Ha ocurrido un problema con la conexión al servidor, verifique la conexión o intente recargar la página",
-	mj_Add_ERR_UNK="Ha ocurrido un error desconocido, intentelo nuevamente";
+	mj_Add_ERR_UNK="Ha ocurrido un error desconocido, intentelo nuevamente",
+	USER_NAME="currentUserNameAppMiBus";
 	
 	
 	

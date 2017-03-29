@@ -9,6 +9,22 @@ class Marca{
 		this.time    = time;
 		this.usuario = usuario;
 	}
+	static to(v){
+		return new Marca(v.lat,v.lng,v.origen,v.destino,v.estado,v.info,v.time,v.usuario);
+	}
+	static from(v){
+		return {
+			_class :"Marca",
+			lat    :v.lat,
+			lng    :v.lng,
+			origen :v.origen,
+			destino:v.destino,
+			estado :v.estado,
+			info   :v.info,
+			time   :v.time,
+			usuario:v.usuario
+		}
+	}
 };
 
 const prepararDatosPrueba=(actual)=>{

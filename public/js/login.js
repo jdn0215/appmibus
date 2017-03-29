@@ -50,6 +50,7 @@ var getFacebookData  = function (){
 
 	FB.api('/me', function(response){
 		//$("#hello")[0].innerHTML=response.status;
+		localStorage.setItem(USER_NAME,response.name);
 		$('#login').after(div_session);
 		$('#login').remove();
 		toMap();
@@ -98,11 +99,12 @@ var facebookLogout = function() {
 	    $(document).on('click', '#logout', function(e){
 			e.preventDefault();
 	  	if(confirm("¿Estas seguro?")){
+			localStorage.setItem(USER_NAME,null);
 			facebookLogout();
 		}
 	  	else
 	  		return false;
 	  })
 
-})
+})		
 

@@ -88,7 +88,9 @@ const createReporte=()=>
 		$("#addOrigen").val(),
 		$("#addDestion").val(),
 		$("#addQuePasa").val(),
-		$("#addExtra").val()
+		$("#addExtra").val(),
+		null,
+		localStorage.getItem(USER_NAME)
 	):false;
 	
 const validar=()=>{

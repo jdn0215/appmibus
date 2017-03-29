@@ -54,7 +54,7 @@ router.use((req, res, next)=>{
 });
 
 
-app.set('port', port)
+app.set('port', port	)
 
 app.get('/', function(req, res){
   res.json({ mensaje: 'Un ejemplo de nodejs, express y Heroku hola a todos de aplicaciones globales ya podemos morir en paz R.I.P mas cambios vendran! ya no se que hacerle mas...'});
@@ -70,6 +70,7 @@ router.get('/', function(req, res) {
 });
 
 router.route('/save').post((req,res)=>{
+	console.log("save request");
 	MongoClient.connect(url,(err, db)=> {
 		if(err){
 			return console.log("error al conectar con mongoClient"),
@@ -78,10 +79,18 @@ router.route('/save').post((req,res)=>{
 		console.log('Conecctado!: ', url);
 		let collection = db.collection(schema),
 		    obj = req.body;
-		console.log(obj);
-		obj["id"]=1;
+		let nuevaMarca = obj.arg0;
+		console.log("Dato para insertar: "+nuevaMarca);
+		
+		if(nuevaMarca._class!== "Marca" || nuevaMarca.usuario=== null){
+			console.log("objeto no definido o usuario no especificado");
+			return res.json({mj:errTrans});
+		}
+		
+		nuevaMarca.time = new Date();
+		
 		collection.remove();
-		collection.insert(obj,(err,result)=>{
+		collection.insert(JSON.parse(nuevaMarca),(err,result)=>{
 			if(err){
 				console.log("ERROR AL INSERTAR");
 				res.json({mj:errTrans});
