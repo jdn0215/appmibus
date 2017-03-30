@@ -20,7 +20,7 @@ const initMap=()=>{
 
 /**************Poner marcas************************/
 const pintarMarcas=(marcas)=>{
-	infoWindows.reduce((a,e)=>(e.close(),[]),[]);
+	infoWindows=infoWindows.reduce((a,e)=>(e.close(),[]),[]);
 	marcas.forEach(pintarMarca);
 }
 
@@ -150,5 +150,18 @@ const getId=(infoW)=>{
 	return isNaN(key) ? 0 : key;
 }
 
-
 /******************************************************************/
+const nuevasMarcas=(args=[])=>{
+	if(marcasObjs.length !== args.length){
+		marcasObjs = args;
+		return true;
+	}
+	let hubieronCambios = marcasObjs.reduce(
+		(a,e,i)=> e._id === args._id ? a : true ,false);
+	if(hubieronCambios)
+		marcasObjs = args;
+	return hubieronCambios;
+}
+
+
+

@@ -6,8 +6,8 @@ $.fn.popover.Constructor.prototype.show = function () {
     this.options.callback();
   }
 }
-var aux=true;
-var aux2=true;
+var aux=false;
+var aux2=false;
 /******************************************************/
 
 const init=()=>{
@@ -17,10 +17,11 @@ const init=()=>{
 	initMap();
 	setInterval(()=>{
 		if(current !== null && current !== undefined){ //evitar que haga feo hasta que todo este listo
-			prepararDatosPrueba(current);
+			buscaMarcas();
 			if(aux){
 				aux=false;
 				pintarMarcas(marcasObjs);
+				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
 				eventoInfoWindows();
 				aux2=false;
@@ -29,6 +30,23 @@ const init=()=>{
 	},timeUpdate);
 	addLogOut();
 };
+
+const buscaMarcas=()=>{
+	proxy.proxy("load",res=>{
+		if(Array.isArray(res)){
+			if(nuevasMarcas(res)){
+				aux=true;//da el paso para que se pinten las marcas nuevas
+			}
+		}else{
+			let r = res.mj;
+			fMensaje( r===errConectClientM ? mj_Add_ERR_DB
+				:     r===errTrans         ? mj_Add_ERR_SR
+				:                            mj_Add_ERR_UNK
+				);
+		}	
+	},current.position.lat(),current.position.lng());
+}
+
 
 const addLogOut=()=>{
 	var intervarl=setInterval(
@@ -66,10 +84,10 @@ const addReporte=()=>{
 	if(reporte === false ) return;
 	proxy.proxy('save',res=>{
 		let r = res.mj;
-		fMensaje(     r===success ? mj_Add_succes
-				:errConectClientM ? mj_Add_ERR_DB
-				:        errTrans ? mj_Add_ERR_SR
-				:                   mj_Add_ERR_UNK
+		fMensaje(     r===success          ? mj_Add_succes
+				:     r===errConectClientM ? mj_Add_ERR_DB
+				:     r===errTrans         ? mj_Add_ERR_SR
+				:                            mj_Add_ERR_UNK
 				);
 	},reporte);
 	marcasObjs.push(reporte);

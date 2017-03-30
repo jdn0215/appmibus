@@ -1,5 +1,5 @@
 class Marca{
-	constructor(lat=0,lng=0,origen="highway",destino="hell",estado="",info="",time=new Date(),usuario){
+	constructor(lat=0,lng=0,origen="highway",destino="hell",estado="",info="",time=new Date(),usuario,_id=-1){
 		this.lat     = lat;
 		this.lng     = lng;
 		this.origen  = origen;
@@ -8,9 +8,10 @@ class Marca{
 		this.info    = info;
 		this.time    = time;
 		this.usuario = usuario;
+		this._id=_id;
 	}
 	static from(v){
-		return new Marca(v.lat,v.lng,v.origen,v.destino,v.estado,v.info,v.time,v.usuario);
+		return new Marca(v.lat,v.lng,v.origen,v.destino,v.estado,v.info,v.time,v.usuario,v._id);
 	}
 	static to(v){
 		return {
@@ -26,11 +27,3 @@ class Marca{
 		}
 	}
 };
-
-const prepararDatosPrueba=(actual)=>{
-	let a=actual.position.lat(),
-	    b=actual.position.lng();
-	marcasObjs[0]=new Marca(a+=0.00020430,b+=0.00042105,"Lagunilla","San Jose","Hay demasiada presa","Bus placa SJB 666");
-	marcasObjs[1]=new Marca(a+=0.00060430,b-=0.00000105,"Aurora","Heredia","Acaba de Salir de la terminal");
-	marcasObjs[2]=new Marca(a+=0.00100430,b+=0.00051005,"San Jose","Launilla","El chofer va ebrio","Por la Uruca");
-}
