@@ -124,7 +124,7 @@ router.route('/load').get((req,res)=>{
 			{lat:{ $lt:latitud-1, $gte:latitud+1}},
 			{lng:{$lt:longitud-1,$gte:longitud+1}},(err,result)=>{
 			if(err){
-				console.log("error en la db);
+				console.log("error en la db");
 				return res.json({mj:errConectClientM});
 			}
 			console.log(result);
