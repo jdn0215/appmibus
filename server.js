@@ -103,7 +103,7 @@ router.route('/save').post((req,res)=>{
 	});
 });
 
-router.route('/load').get((req,res)=>{
+router.route('/load').post((req,res)=>{
 	MongoClient.connect(url,(err, db)=> {
 		if(err){
 			return console.log("error al conectar con mongoClient"),
