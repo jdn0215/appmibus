@@ -41,7 +41,7 @@ const crearMarca=(marca,idx)=>{
 	iw.index=idx;
 	iw.addListener('click', function() {
 		mapa.setZoom(8);
-		//mapa.setCenter(iw.getPosition());
+		mapa.setCenter(iw.getPosition());
 	});
 	iw.addListener('click',function(){
 		alert(123);
