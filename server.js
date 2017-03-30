@@ -122,8 +122,8 @@ router.route('/load').post((req,res)=>{
 		////
 		let collection = db.collection(schema);
 		collection.find(
-			{lat:{ $lt:latitud-1, $gte:latitud+1}},
-			{lng:{$lt:longitud-1,$gte:longitud+1}},(err,result)=>{
+			{lat:{$lt: latitud-1, $gte: latitud+1},
+			 lng:{$lt:longitud-1, $gte:longitud+1}}).toArray((err,result)=>{
 			if(err){
 				console.log("error en la db");
 				return res.json({mj:errConectClientM});
