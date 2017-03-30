@@ -109,8 +109,24 @@ router.route('/load').get((req,res)=>{
 			return console.log("error al conectar con mongoClient"),
 				   res.json({mj:errConectClientM});
 		}
+		///obteniendo ubicación del usuario
+		let obj = req.body;
+		let latitud = JSON.parse(obj.arg0);
+		let longitud = JSON.parse(obj.arg1);
+		console.log("consultando para: "+latitud+" "+longitud);
+		if(isNaN(latitud) || isNaN(longitud)){
+			console.log("coordenada inválida");
+			return res.json({mj:errTrans});
+		}
+		////
 		let collection = db.collection(schema);
-		collection.findOne({id:1},(err,result)=>{
+		collection.find(
+			{lat:{ $lt:latitud-1, $gte:latitud+1}},
+			{lng:{$lt:longitud-1,$gte:longitud+1}},(err,result)=>{
+			if(err){
+				console.log("error en la db);
+				return res.json({mj:errConectClientM});
+			}
 			console.log(result);
 			res.json(result);
 		})
