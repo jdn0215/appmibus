@@ -24,6 +24,7 @@ const init=()=>{
 				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
 				eventoInfoWindows();
+				mapa.setCenter(current.position);
 				aux2=false;
 			}
 		}
