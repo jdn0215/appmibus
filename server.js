@@ -89,7 +89,7 @@ router.route('/save').post((req,res)=>{
 		
 		nuevaMarca.time = new Date();
 		
-		collection.remove();
+		//collection.remove();
 		collection.insert(nuevaMarca,(err,result)=>{
 			if(err){
 				console.log("ERROR AL INSERTAR");
