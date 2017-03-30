@@ -110,8 +110,8 @@ router.route('/load').post((req,res)=>{
 				   res.json({mj:errConectClientM});
 		}
 		///obteniendo ubicación del usuario
-		console.log("objeto recibido: "+obj);
 		let obj = req.body;
+		console.log("objeto recibido: "+obj);
 		let latitud = JSON.parse(obj.arg0);
 		let longitud = JSON.parse(obj.arg1);
 		console.log("consultando para: "+latitud+" "+longitud);
