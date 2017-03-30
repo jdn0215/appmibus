@@ -157,7 +157,7 @@ const nuevasMarcas=(args=[])=>{
 		return true;
 	}
 	let hubieronCambios = marcasObjs.reduce(
-		(a,e,i)=> e._id === args._id ? a : true ,false);
+		(a,e,i)=> e._id === args[i]._id ? a : true ,false);
 	if(hubieronCambios)
 		marcasObjs = args;
 	return hubieronCambios;
