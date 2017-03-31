@@ -11,7 +11,7 @@ class Marca{
 		this._id=_id;
 	}
 	static from(v){
-		return new Marca(v.lat,v.lng,v.origen,v.destino,v.estado,v.info,v.time,v.usuario,v._id);
+		return new Marca(v.lat,v.lng,v.origen,v.destino,v.estado,v.info,new Date(v.time),v.usuario,v._id);
 	}
 	static to(v){
 		return {
