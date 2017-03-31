@@ -1,0 +1,14 @@
+#data{
+	width:40%;
+	height:30%;
+	position:fixed;
+	left:30%;
+	top:5%;
+}
+#data table{
+	background-color:#EFFBF8;
+	border:solid 1px #000;
+}
+#data table th{
+	background-color:#F2F2F2
+}
