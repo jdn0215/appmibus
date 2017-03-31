@@ -2,7 +2,26 @@
 	position:fixed;
 	left:25%;
 	top:5%;
-	width:50%;
+	width:60%;
+}
+
+#data table, #data td, #data th {    
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+#data table {
+    border-collapse: collapse;
+    width: 100%;
+	background-color:#FFF;
+}
+
+#data th, #data td {
+    padding: 15px;
+}
+
+#data th{
+	background-color:#E6E6E6;
 }
 
 
