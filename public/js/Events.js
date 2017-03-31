@@ -8,6 +8,7 @@ $.fn.popover.Constructor.prototype.show = function () {
 }
 var aux=false;
 var aux2=false;
+var aux3=false;
 /******************************************************/
 
 const init=()=>{
@@ -25,7 +26,11 @@ const init=()=>{
 			}else if(aux2){
 				eventoInfoWindows();
 				aux2=false;
-			}else mapa.setCenter(current.position);
+				aux3=true;//da paso a que se centre el mapa
+			}else if(aux3){
+				mapa.setCenter(current.position);
+				aux3=false;
+			}
 		}
 	},timeUpdate);
 	addLogOut();

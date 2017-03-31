@@ -22,7 +22,6 @@ const initMap=()=>{
 const pintarMarcas=(marcas)=>{
 	infoWindows=infoWindows.reduce((a,e)=>(e.close(),[]),[]);
 	marcas.forEach(pintarMarca);
-	mapa.setCenter(current.position);
 }
 
 const pintarMarca=(marca,indice)=>{
