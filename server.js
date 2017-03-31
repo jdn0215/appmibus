@@ -9,6 +9,7 @@ const errTrans        = -2;
 const success         =  0;
 const schema          = "prueba";
 const url = 'mongodb://heroku_v8gq64z1:qff2h0fa49ql7s4vue9o0imm91@ds129010.mlab.com:29010/heroku_v8gq64z1';
+const _radio=0.4;
 /**************************************************/
 
 /*********************importaciones****************/
@@ -122,8 +123,8 @@ router.route('/load').post((req,res)=>{
 		////
 		let collection = db.collection(schema);
 		collection.find(
-			{lat:{$gt: latitud-1, $lt: latitud+1},
-			 lng:{$gt:longitud-1, $lt:longitud+1}}).toArray((err,result)=>{
+			{lat:{$gt: latitud-_radio, $lt: latitud+_radio},
+			 lng:{$gt:longitud-_radio, $lt:longitud+_radio}}).toArray((err,result)=>{
 			if(err){
 				console.log("error en la db");
 				return res.json({mj:errConectClientM});
