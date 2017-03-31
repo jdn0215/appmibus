@@ -122,7 +122,6 @@ const eventoInfoWindows=()=>{
 		e.setAttribute("id","id"+key);
 		e.setAttribute("data-toggle","popover");
 		$("#id"+key).click(()=>{
-			alert(123);
 			let m = marcasObjs[key];
 			$("#dataUsuario")[0].innerHTML= m.usuario;
 			$(   "#dataRuta")[0].innerHTML= (m.origen+"-"+m.destino);
