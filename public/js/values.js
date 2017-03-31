@@ -44,7 +44,7 @@ const forms={
 			<input id="addOrigen"></input>
 		</label><br/>
 
-		<h5 id="h5">Dulce Nombre, San Isidro, Alajuela</h5>
+		<h5 id="h5">Dulce Nombre, San Isidro, Alajuela</h5><br/>
 
 		<label for="addDestion">
 			Destino del bus
