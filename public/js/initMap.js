@@ -39,13 +39,6 @@ const crearMarca=(marca,idx)=>{
 	iw.estado = marca.estado;
 	iw.info = marca.info;
 	iw.index=idx;
-	iw.addListener('click', function() {
-		mapa.setZoom(8);
-		mapa.setCenter(iw.getPosition());
-	});
-	iw.addListener('click',function(){
-		alert(123);
-	});
 	return iw;
 }
 /***************config****************/
