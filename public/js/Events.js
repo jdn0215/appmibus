@@ -83,6 +83,10 @@ const popOverBuscar=()=>{
 const initEventsAdd=()=>{
 	$("#addAdd").click(()=>addReporte());
 	$("#addCancel").click(()=> $("#"+botonAdd)[0].click());
+	$("#addOrigen").focus(()=>window.scrollTo(0, 0));
+	$("#addDestion").focus(()=>window.scrollTo(0, 0));
+	$("#addQuePasa").focus(()=>window.scrollTo(0, 0));
+	$("#addExtra").focus(()=>window.scrollTo(0, 0));
 };
 
 const addReporte=()=>{
