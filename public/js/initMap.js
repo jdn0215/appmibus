@@ -138,6 +138,7 @@ const timeText=(d)=>{
 	let h=d.getHours();
 	let m=d.getMinutes();
 	a=(h>10?"":"0")+h+":"+(m>10?"":"0")+m;
+	return a;
 }
 
 const getId=(infoW)=>{
