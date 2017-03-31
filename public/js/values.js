@@ -39,12 +39,10 @@ const responseStatusMin=200,
 const forms={	
 	formAdd:`
 	<div id="addReporte">
-		<label id="label" for="addOrigen">
+		<label for="addOrigen">
 			Origen del bus
 			<input id="addOrigen"></input>
 		</label><br/>
-
-		<h5 id="h5">Dulce Nombre, San Isidro, Alajuela</h5><br/>
 
 		<label for="addDestion">
 			Destino del bus
