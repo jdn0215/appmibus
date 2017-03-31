@@ -76,8 +76,8 @@ const popOverBuscar=()=>{
 }
 
 const initEventsAdd=()=>{
-	$("#label").innerHTML = "purebsjd";
-	$("#h5").innerHTML = "purebsjd";
+	$("#label").innerText = "purebsjd";
+	$("#h5").innerText = "purebsjd";
 	$("#addAdd").click(()=>addReporte());
 	$("#addCancel").click(()=> $("#"+botonAdd)[0].click());
 };
