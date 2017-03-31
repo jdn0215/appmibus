@@ -6,6 +6,7 @@
 	top:5%;
 }
 #data table{
+	position:fixed;
 	background-color:#EFFBF8;
 	border:solid 1px #000;
 }
