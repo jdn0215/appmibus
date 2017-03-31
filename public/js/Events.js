@@ -15,7 +15,7 @@ const init=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	$("#"+botonAdd).click(()=>popOverAdd());
 	$("#"+botonBuscar).click(()=>popOverBuscar());
-	$("#dataX").click(()=>$("#data")[0].className="noVisible";);
+	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	initMap();
 	setInterval(()=>{
 		if(current !== null && current !== undefined){ //evitar que haga feo hasta que todo este listo
