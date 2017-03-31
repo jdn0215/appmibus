@@ -116,25 +116,22 @@ const handleLocationError=(browserHasGeolocation, current, pos)=>{
 const getInfoWindows=()=>  $("div").toArray().filter(e=>e.style.cursor==="default"); 
 const eventoInfoWindows=()=>{
 	let arr = getInfoWindows();
+	let timeText=(d)=>{
+		let a="";
+		let h=d.getHours();
+		let m=d.getMinutes();
+		a=(h>10?"":"0")+h+":"+(m>10?"":"0")+m;
+	}
 	arr.forEach(e=>{
 		let key = getId(e);
 		let marca = marcasObjs[key];
-		e.setAttribute("id","id"+key);
-		e.setAttribute("data-toggle","popover");
-		if(marca.info===""){
-			e.setAttribute("title",marca.origen+" - "+marca.destino);
-			e.setAttribute("data-content",marca.estado);
-		}
-		else{
-			e.setAttribute("title",marca.estado);
-			e.setAttribute("data-content",marca.info);
-		}
-		$("#id"+key).click(()=>$("#id"+key).popover({
-			placement:'bottom',
-			show: "500", 
-			hide: "200"
-		}));
+		$("#dataUsuario")[0].innerHTML= marca.usuario;
+		$(   "#dataRuta")[0].innerHTML= (marca.origen+"-"+marca.destino);
+		$(   "#dataQueP")[0].innerHTML=(timeText(marca.time)+" "marca.estado);
+		$(   "#dataInfo")[0].innerHTML= (marca.info);
+		$("#data")[0].className="";
 	});
+	
 }
 const getId=(infoW)=>{
     let texto = infoW.childNodes[1].childNodes[0].childNodes[0].innerHTML; /*salida - lledada (key)*/
