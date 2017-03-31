@@ -127,7 +127,7 @@ const eventoInfoWindows=()=>{
 		let marca = marcasObjs[key];
 		$("#dataUsuario")[0].innerHTML= marca.usuario;
 		$(   "#dataRuta")[0].innerHTML= (marca.origen+"-"+marca.destino);
-		$(   "#dataQueP")[0].innerHTML=(timeText(marca.time)+" "marca.estado);
+		$(   "#dataQueP")[0].innerHTML=(timeText(marca.time)+" "+marca.estado);
 		$(   "#dataInfo")[0].innerHTML= (marca.info);
 		$("#data")[0].className="";
 	});
