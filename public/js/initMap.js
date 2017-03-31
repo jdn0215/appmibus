@@ -116,23 +116,31 @@ const handleLocationError=(browserHasGeolocation, current, pos)=>{
 const getInfoWindows=()=>  $("div").toArray().filter(e=>e.style.cursor==="default"); 
 const eventoInfoWindows=()=>{
 	let arr = getInfoWindows();
-	let timeText=(d)=>{
-		let a="";
-		let h=d.getHours();
-		let m=d.getMinutes();
-		a=(h>10?"":"0")+h+":"+(m>10?"":"0")+m;
-	}
 	arr.forEach(e=>{
 		let key = getId(e);
 		let marca = marcasObjs[key];
-		$("#dataUsuario")[0].innerHTML= marca.usuario;
-		$(   "#dataRuta")[0].innerHTML= (marca.origen+"-"+marca.destino);
-		$(   "#dataQueP")[0].innerHTML=(timeText(marca.time)+" "+marca.estado);
-		$(   "#dataInfo")[0].innerHTML= (marca.info);
-		$("#data")[0].className="";
+		e.setAttribute("id","id"+key);
+		e.setAttribute("data-toggle","popover");
+		$("#id"+key).click((e)=>{
+			let ob = e.target;
+			let k = ob.getAttribute("id").split("id")[1];
+			let m = marcasObjs[k];
+			$("#dataUsuario")[0].innerHTML= m.usuario;
+			$(   "#dataRuta")[0].innerHTML= (m.origen+"-"+m.destino);
+			$(   "#dataQueP")[0].innerHTML=(timeText(m.time)+" "+m.estado);
+			$(   "#dataInfo")[0].innerHTML= (m.info);
+			$("#data")[0].className="";
+		});
 	});
-	
 }
+
+const timeText=(d)=>{
+	let a="";
+	let h=d.getHours();
+	let m=d.getMinutes();
+	a=(h>10?"":"0")+h+":"+(m>10?"":"0")+m;
+}
+
 const getId=(infoW)=>{
     let texto = infoW.childNodes[1].childNodes[0].childNodes[0].innerHTML; /*salida - lledada (key)*/
 	let key = texto.split('(').pop(); /* key)*/
