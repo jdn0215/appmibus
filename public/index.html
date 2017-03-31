@@ -4,6 +4,7 @@
 		<title>MI BUS</title>
 		<!-- CSS -->
 			<link rel="stylesheet" href="./style/map.css" type="text/css" media="all" />
+			<link rel="stylesheet" href="./style/data.css" type="text/css" media="all" />
 			<link rel="stylesheet" href="./style/style.css" type="text/css" media="all" />
 			<link rel="stylesheet" href="./style/fb.css" type="text/css" media="all" />
 		<!---JQuery -->
@@ -39,6 +40,21 @@
 		</div>
 		<div id="wrapper" class="noVisible">
 			<div id="map"></div>
+			
+			<div id="data">
+				<table>
+					<th>
+						<button class="btn btn-danger">
+							<span class="glyphicon glyphicon-remove"></span>
+						<button>
+						<p id="dataUsuario">usuario</p>
+					<th>
+					<tr><td id="dataRuta">A-B></td></tr>
+					<tr><td id="dataQueP">choque</td></tr>
+					<tr><td id="dataInfo">extra</td></tr>
+				</table>
+			</div>
+			
 			
 			<div id="panel">
 				<button id="addRegistro" data-placement="bottom" data-title="Crear Reporte"class="btn btn-success">Reportar</button>
