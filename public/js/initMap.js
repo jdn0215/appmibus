@@ -129,7 +129,7 @@ const eventoInfoWindows=()=>{
 			$(   "#dataQueP")[0].innerHTML=(timeText(m.time)+" "+m.estado);
 			$(   "#dataInfo")[0].innerHTML= (m.info);
 			$(   "#data")[0].className="";
-		}));
+		});
 	});
 }
 
