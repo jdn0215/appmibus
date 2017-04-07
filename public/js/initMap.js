@@ -132,7 +132,7 @@ const eventoInfoWindows=()=>{
 			$("#dataHora")[0].innerHTML=(timeText(m.time));
 			$("#dataQueP")[0].innerHTML=("  "+m.estado);
 			$("#dataInfo")[0].innerHTML=("  "+m.info);
-			$("#data")[0].style="";
+			$("#data")[0].className="";
 		});
 	});
 }
