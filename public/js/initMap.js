@@ -125,7 +125,6 @@ const eventoInfoWindows=()=>{
 		e.setAttribute("id","id"+key);
 		e.setAttribute("data-toggle","popover");
 		$("#id"+key).click(()=>{
-			alert("caca");
 			let m = marcasObjs[key];
 			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
 			$("#dataOrigen")[0].innerHTML=("  "+m.origen);
@@ -133,7 +132,7 @@ const eventoInfoWindows=()=>{
 			$("#dataHora")[0].innerHTML=(timeText(m.time));
 			$("#dataQueP")[0].innerHTML=("  "+m.estado);
 			$("#dataInfo")[0].innerHTML=("  "+m.info);
-			$("#data").css("display","");
+			$("#data")[0].style="";
 		});
 	});
 }
