@@ -41,6 +41,7 @@ const crearMarca=(marca,idx)=>{
 	iw.estado = marca.estado;
 	iw.info = marca.info;
 	iw.index=idx;
+	mapa.setCenter(current.position);
 	return iw;
 }
 /***************config****************/
