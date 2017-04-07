@@ -125,10 +125,12 @@ const eventoInfoWindows=()=>{
 		e.setAttribute("data-toggle","popover");
 		$("#id"+key).click(()=>{
 			let m = marcasObjs[key];
-			$("#dataUsuario")[0].innerHTML= m.usuario;
-			$(   "#dataRuta")[0].innerHTML= (m.origen+"-"+m.destino);
-			$(   "#dataQueP")[0].innerHTML=(timeText(m.time)+" "+m.estado);
-			$(   "#dataInfo")[0].innerHTML= (m.info);
+			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
+			$(   "#dataRuta")[0].innerHTML= ("  "+m.origen);
+			$(   "#dataRuta")[0].innerHTML= ("  "+m.destino);
+			$(   "#dataQueP")[0].innerHTML=(timeText(m.time));
+			$(   "#dataRuta")[0].innerHTML= ("  "+m.estado);
+			$(   "#dataInfo")[0].innerHTML= ("  "+m.info);
 			$(   "#data")[0].className="";
 		});
 	});
