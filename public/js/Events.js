@@ -6,7 +6,7 @@ $.fn.popover.Constructor.prototype.show = function () {
     this.options.callback();
   }
 }
-var aux=false;
+var aux=true;
 var aux2=false;
 var aux3=false;
 /******************************************************/
@@ -19,8 +19,9 @@ const init=()=>{
 	initMap();
 	setInterval(()=>{
 		if(current !== null && current !== undefined){ //evitar que haga feo hasta que todo este listo
-			buscaMarcas();
 			if(aux){
+				buscaMarcas();
+				aux=false;
 				aux=false;
 				pintarMarcas(marcasObjs);
 				aux2=true;//Da paso para agregar eventos a las marcas
