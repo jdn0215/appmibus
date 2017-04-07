@@ -128,14 +128,14 @@ const eventoInfoWindows=()=>{
 			let m = marcasObjs[key];
 			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
 			$("#dataOrigen")[0].innerHTML=("  "+m.origen);
-			$("#dataOrigen")[0].style="fa fa-crosshairs";
+			$("#dataOrigen")[0].className="fa fa-crosshairs";
 			$("#dataDestino")[0].innerHTML=("  "+m.destino);
-			$("#dataDestino")[0].style="fa fa-arrow-right";
+			$("#dataDestino")[0].className="fa fa-arrow-right";
 			$("#dataHora")[0].innerHTML=(timeText(m.time));
 			$("#dataQueP")[0].innerHTML=("  "+m.estado);
-			$("#dataDestino")[0].style="fa fa-bus";
+			$("#dataQueP")[0].className="fa fa-bus";
 			$("#dataInfo")[0].innerHTML=("  "+m.info);
-			$("#dataDestino")[0].style="fa fa-plus";
+			$("#dataInfo")[0].className="fa fa-plus";
 			$("#data")[0].className="";
 		});
 	});
