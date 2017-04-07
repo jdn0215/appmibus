@@ -125,6 +125,7 @@ const eventoInfoWindows=()=>{
 		e.setAttribute("id","id"+key);
 		e.setAttribute("data-toggle","popover");
 		$("#id"+key).click(()=>{
+			alert("caca");
 			let m = marcasObjs[key];
 			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
 			$("#dataOrigen")[0].innerHTML=("  "+m.origen);
