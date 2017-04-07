@@ -126,12 +126,12 @@ const eventoInfoWindows=()=>{
 		$("#id"+key).click(()=>{
 			let m = marcasObjs[key];
 			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
-			$(   "#dataRuta")[0].innerHTML= ("  "+m.origen);
-			$(   "#dataRuta")[0].innerHTML= ("  "+m.destino);
-			$(   "#dataQueP")[0].innerHTML=(timeText(m.time));
-			$(   "#dataRuta")[0].innerHTML= ("  "+m.estado);
-			$(   "#dataInfo")[0].innerHTML= ("  "+m.info);
-			$(   "#data")[0].className="";
+			$("#origen")[0].innerHTML=("  "+m.origen);
+			$("#destino")[0].innerHTML=("  "+m.destino);
+			$("#hora")[0].innerHTML=(timeText(m.time));
+			$("#dataQueP")[0].innerHTML=("  "+m.estado);
+			$("#dataInfo")[0].innerHTML=("  "+m.info);
+			$("#data")[0].className="";
 		});
 	});
 }
