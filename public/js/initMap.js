@@ -35,7 +35,9 @@ const crearMarca=(marca,idx)=>{
 			lat:marca.lat,
 			lng:marca.lng
 		});
-	iw.setContent(marca.origen+" - "+marca.destino+" ("+idx+")");
+	let contenido = marca.origen+" - "+marca.destino;
+	
+	iw.setContent("<button class='btn btn-info' id='id"+idx+"'>"+contenido+"</button>");
 	iw.estado = marca.estado;
 	iw.info = marca.info;
 	iw.index=idx;
@@ -113,11 +115,11 @@ const handleLocationError=(browserHasGeolocation, current, pos)=>{
 /*************************************************************/
 
 /********************manejo de InfoWindow***********************/
-const getInfoWindows=()=>  $("div").toArray().filter(e=>e.style.cursor==="default"); 
+const getInfoWindows=()=>  $(".btn-info").toArray();
 const eventoInfoWindows=()=>{
 	let arr = getInfoWindows();
 	arr.forEach(e=>{
-		let key = getId(e);
+		let key = e.id.split("id")[1];
 		let marca = marcasObjs[key];
 		e.setAttribute("id","id"+key);
 		e.setAttribute("data-toggle","popover");
