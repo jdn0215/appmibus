@@ -36,6 +36,7 @@ const init=()=>{
 		}
 	},timeUpdate);
 	addLogOut();
+	setInterval(()=>{aux=true},2000);
 };
 
 const buscaMarcas=()=>{
