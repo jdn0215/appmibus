@@ -27,6 +27,23 @@
 	text-align:right;
 }
 
+#hora{
+    font-size:15px;
+	 Color: #000000;
+	 font-weight:bold;
+}
+
+#dataRuta{
+    background:	#008000;
+	Color: 	#FFFFFF;
+	font-weight:900;
+	text-transform:uppercase;
+}	
+
+#dataQueP{
+	Color: #000000;
+}			
+
 
 
 
