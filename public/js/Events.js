@@ -70,7 +70,7 @@ const addLogOut=()=>{
 
 
 const popOverAdd=()=>{
-	$("#"+botonAdd).popover("show",{
+	$("#"+botonAdd).popover({
 		html:true,
 		placement:'top',
 		callback:()=>{initEventsAdd();}
