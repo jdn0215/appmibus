@@ -6,31 +6,26 @@ $.fn.popover.Constructor.prototype.show = function () {
     this.options.callback();
   }
 }
-var aux=true;
+var aux=false;
 var aux2=false;
 var aux3=false;
 /******************************************************/
 
 const init=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
-	addPopOver();
 	$("#"+botonAdd).click(()=>popOverAdd());
 	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	initMap();
 	setInterval(()=>{
 		if(current !== null && current !== undefined){ //evitar que haga feo hasta que todo este listo
+			buscaMarcas();
 			if(aux){
-				buscaMarcas();
-				aux=false;
 				aux=false;
 				pintarMarcas(marcasObjs);
 				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
-				//eventoInfoWindows();
-				fMensaje("Colocando Eventos");
-				$(".btIW").click(e=>eventoBtInfoW(e));
-				fMensaje("Eventos colocados");
+				eventoInfoWindows();
 				aux2=false;
 				aux3=true;//da paso a que se centre el mapa
 			}else if(aux3){
@@ -73,16 +68,12 @@ const addLogOut=()=>{
 }
 
 
-const addPopOver=()=>{
+const popOverAdd=()=>{
 	$("#"+botonAdd).popover({
 		html:true,
 		placement:'top',
 		callback:()=>{initEventsAdd();}
 	});
-}
-
-const popOverAdd=()=>{
-	$("#"+botonAdd).popover("show");
 };
 
 const popOverBuscar=()=>{
@@ -156,3 +147,6 @@ const fMensaje=(texto,delay=7000)=>{
 
 //	$("#"+mensaje).fadeOut("slow");
 }
+
+
+
