@@ -28,7 +28,9 @@ const init=()=>{
 				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
 				//eventoInfoWindows();
+				fMensaje("Colocando Eventos");
 				$(".btIW").click(e=>eventoBtInfoW(e));
+				fMensaje("Eventos colocados");
 				aux2=false;
 				aux3=true;//da paso a que se centre el mapa
 			}else if(aux3){
