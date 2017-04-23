@@ -21,8 +21,8 @@ const initMap=()=>{
 /**************Poner marcas************************/
 const pintarMarcas=(marcas)=>{
 	infoWindows=infoWindows.reduce((a,e)=>(e.close(),[]),[]);
-	popUp("Cargando la información","Un momento por favor");
 	marcas.forEach(pintarMarca);
+	mapa.setCenter(current.position);
 }
 
 const pintarMarca=(marca,indice)=>{
@@ -42,7 +42,6 @@ const crearMarca=(marca,idx)=>{
 	iw.estado = marca.estado;
 	iw.info = marca.info;
 	iw.index=idx;
-	mapa.setCenter(current.position);
 	return iw;
 }
 /***************config****************/
