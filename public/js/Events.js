@@ -15,7 +15,7 @@ const init=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	addPopOver();
 	$("#"+botonAdd).click(()=>popOverAdd());
-	$("#"+botonBuscar).click(()=>popOverBuscar());
+	//$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	/***/
 	$("#buscaRegistro").click(e=>$("#data")[0].className="");
