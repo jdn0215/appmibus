@@ -119,8 +119,8 @@ const handleLocationError=(browserHasGeolocation, current, pos)=>{
 const getInfoWindows=()=>  $(".btn-info").toArray();
 
 const eventoBtInfoW=(e)=>{
-	let key = e.target.id.split("id")[1];
 	console.log("Evento llamado por "+e.target.id);
+	let key = e.target.id.split("id")[1];
 	fMensaje("Evento llamado por "+e.target.id);
 	let m = marcasObjs[key];
 	$("#dataUsuario").html("  "+m.usuario);
