@@ -37,8 +37,8 @@ const crearMarca=(marca,idx)=>{
 			lng:marca.lng
 		});
 	let contenido = marca.origen+" - "+marca.destino;
+	iw.setContent("<button class='btn btn-info' id='id"+idx+"' onclick='eventoBtInfoW(e)'>"+contenido+"</button>");
 	
-	iw.setContent("<button class='btn btn-info' id='id"+idx+"'>"+contenido+"</button>");
 	iw.estado = marca.estado;
 	iw.info = marca.info;
 	iw.index=idx;
@@ -117,36 +117,24 @@ const handleLocationError=(browserHasGeolocation, current, pos)=>{
 
 /********************manejo de InfoWindow***********************/
 const getInfoWindows=()=>  $(".btn-info").toArray();
-const eventoInfoWindows=()=>{
-	let mensaje ="mj:";
-	let arr = getInfoWindows();
-	for(let e in arr){
-		let key = arr[e].id.split("id")[1];
-		console.log("Evento para "+key);
-		mensaje+=("Evento para "+key);
-		let marca = marcasObjs[key];
-		arr[e].setAttribute("id","id"+key);
-		arr[e].setAttribute("data-toggle","popover");
-		$("#id"+key).click((evt)=>{
-			console.log("Evento llamado por "+evt.target.id);
-			fMensaje("Evento llamado por "+evt.target.id);
-			let m = marcasObjs[key];
-			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
-			$("#dataOrigen")[0].innerHTML=("  "+m.origen);
-			$("#dataOrigen")[0].className="fa fa-crosshairs";
-			$("#dataDestino")[0].innerHTML=("  "+m.destino);
-			$("#dataDestino")[0].className="fa fa-arrow-right";
-			$("#dataHora")[0].innerHTML=(timeText(m.time));
-			$("#dataQueP")[0].innerHTML=("  "+m.estado);
-			$("#dataQueP")[0].className="fa fa-bus";
-			$("#dataInfo")[0].innerHTML=("  "+m.info);
-			$("#dataInfo")[0].className="fa fa-plus";
-			$("#data")[0].className="";
-		});
-	};
-	fMensaje(mensaje);
-}
 
+const eventoBtInfoW=(e)=>{
+	let key = e.target.id.split("id")[1];
+	console.log("Evento llamado por "+evt.target.id);
+	fMensaje("Evento llamado por "+evt.target.id);
+	let m = marcasObjs[key];
+	$("#dataUsuario").html("  "+m.usuario);
+	$("#dataOrigen").html("  "+m.origen);
+	$("#dataOrigen").addClass("fa fa-crosshairs");
+	$("#dataDestino").html("  "+m.destino);
+	$("#dataDestino").addclass("fa fa-arrow-right");
+	$("#dataHora").html(timeText(m.time));
+	$("#dataQueP").html("  "+m.estado);
+	$("#dataQueP").addclass("fa fa-bus");
+	$("#dataInfo").html("  "+m.info);
+	$("#dataInfo")..addclass("fa fa-plus");
+	$("#data")[0].className="";
+}
 const timeText=(d)=>{
 	let a="";
 	let h=d.getHours();
