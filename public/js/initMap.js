@@ -120,8 +120,8 @@ const getInfoWindows=()=>  $(".btn-info").toArray();
 
 const eventoBtInfoW=(e)=>{
 	let key = e.target.id.split("id")[1];
-	console.log("Evento llamado por "+evt.target.id);
-	fMensaje("Evento llamado por "+evt.target.id);
+	console.log("Evento llamado por "+e.target.id);
+	fMensaje("Evento llamado por "+e.target.id);
 	let m = marcasObjs[key];
 	$("#dataUsuario").html("  "+m.usuario);
 	$("#dataOrigen").html("  "+m.origen);
