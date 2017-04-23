@@ -20,9 +20,11 @@ const initMap=()=>{
 
 /**************Poner marcas************************/
 const pintarMarcas=(marcas)=>{
+	popUp("Cargando la información","Un momento por favor");
 	infoWindows=infoWindows.reduce((a,e)=>(e.close(),[]),[]);
 	marcas.forEach(pintarMarca);
 	mapa.setCenter(current.position);
+	closePopUp();
 }
 
 const pintarMarca=(marca,indice)=>{
