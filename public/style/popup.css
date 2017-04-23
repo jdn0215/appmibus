@@ -10,3 +10,10 @@
 .modal-content{
     border:2px solid #01DF01;
 }
+
+#popUp{
+	position:fixed;
+	left:10%;
+	top:5%;
+	width:80%;
+}

@@ -150,8 +150,8 @@ const fMensaje=(texto,delay=7000)=>{
 }
 
 const popUp=(hdr="",mj="",f=null,...args)=>{
-	$("#popHDR").html(hdr);
-	$("#popMj").html(mj);
+	//$("#popHDR").html(hdr);
+	//$("#popMj").html(mj);
 	$("#popUp").removeClass("noVisible");
 	if(f!==null)
 		f(args);
