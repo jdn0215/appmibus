@@ -12,6 +12,7 @@ var aux3=false;
 /******************************************************/
 
 const init=()=>{
+	popUp("HOLA","MUNDO");
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	$("#"+botonAdd).click(()=>popOverAdd());
 	$("#"+botonBuscar).click(()=>popOverBuscar());
@@ -70,7 +71,7 @@ const addLogOut=()=>{
 
 
 const popOverAdd=()=>{
-	$("#"+botonAdd).popover({
+	$("#"+botonAdd).popover("show",{
 		html:true,
 		placement:'top',
 		callback:()=>{initEventsAdd();}
@@ -149,5 +150,10 @@ const fMensaje=(texto,delay=7000)=>{
 //	$("#"+mensaje).fadeOut("slow");
 }
 
-
+const popUp=(hdr="",f=null,mj="",...args)=>{
+	$("#popHDR").html(hfr);
+	$("#popMj").html(mj);
+	if(f!==null)
+		f(args);
+}
 
