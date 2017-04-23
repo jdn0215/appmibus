@@ -152,10 +152,12 @@ const fMensaje=(texto,delay=7000)=>{
 const popUp=(hdr="",mj="",f=null,...args)=>{
 	$("#popHDR").html(hdr);
 	$("#popMj").html(mj);
+	$("button").hide();
 	$("#popUp").removeClass("noVisible");
 	if(f!==null)
 		f(args);
 }
 const closePopUp=()=>{
 	$("#popUp").addClass("noVisible");
+	$("button").show();
 }
