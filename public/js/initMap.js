@@ -118,7 +118,7 @@ const handleLocationError=(browserHasGeolocation, current, pos)=>{
 /********************manejo de InfoWindow***********************/
 const getInfoWindows=()=>  $(".btn-info").toArray();
 const eventoInfoWindows=()=>{
-	let mensaje ="";
+	let mensaje ="sin mensaje";
 	let arr = getInfoWindows();
 	arr.forEach(e=>{
 		let key = e.id.split("id")[1];
