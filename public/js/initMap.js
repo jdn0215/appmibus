@@ -132,7 +132,7 @@ const eventoBtInfoW=(e)=>{
 	$("#dataQueP").html("  "+m.estado);
 	$("#dataQueP").addclass("fa fa-bus");
 	$("#dataInfo").html("  "+m.info);
-	$("#dataInfo")..addclass("fa fa-plus");
+	$("#dataInfo").addclass("fa fa-plus");
 	$("#data")[0].className="";
 }
 const timeText=(d)=>{
