@@ -32,10 +32,7 @@ const init=()=>{
 				/*$(".btIW").click(e=>$("#data")[0].className="");
 				$('[style*="cursor: default"]').click(e=>$("#data")[0].className="");
 				document.getElementById("id19").click();*/
-				let iwa;
-				do{
-					iwa = document.getElementsByClassName('btIW');
-				}while(iwa.length===0);
+				let iwa = document.getElementsByClassName('btIW');
 				alert("recuperado los iw ");
 				for (let i = 0; i < iwa.length; i++) {
 					alert("evento en "+i);
@@ -49,6 +46,7 @@ const init=()=>{
 			}else if(aux3){
 				mapa.setCenter(current.position);
 				aux3=false;
+				aux2 = true;
 			}
 		}
 	},timeUpdate);
