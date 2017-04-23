@@ -118,15 +118,18 @@ const handleLocationError=(browserHasGeolocation, current, pos)=>{
 /********************manejo de InfoWindow***********************/
 const getInfoWindows=()=>  $(".btn-info").toArray();
 const eventoInfoWindows=()=>{
+	let mensaje ="";
 	let arr = getInfoWindows();
 	arr.forEach(e=>{
 		let key = e.id.split("id")[1];
 		console.log("Evento para "+key);
+		mensaje+=("Evento para "+key);
 		let marca = marcasObjs[key];
 		e.setAttribute("id","id"+key);
 		e.setAttribute("data-toggle","popover");
 		$("#id"+key).click((evt)=>{
 			console.log("Evento llamado por "+evt.target.id);
+			fMensaje("Evento llamado por "+evt.target.id);
 			let m = marcasObjs[key];
 			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
 			$("#dataOrigen")[0].innerHTML=("  "+m.origen);
@@ -141,6 +144,7 @@ const eventoInfoWindows=()=>{
 			$("#data")[0].className="";
 		});
 	});
+	fMensaje(mensaje);
 }
 
 const timeText=(d)=>{
