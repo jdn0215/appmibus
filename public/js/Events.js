@@ -30,7 +30,7 @@ const init=()=>{
 			}else if(aux2){
 				//eventoInfoWindows();
 				$(".btIW").click(e=>$("#data")[0].className="");
-				
+				$('[style*="cursor: default"]').click(e=>$("#data")[0].className="");
 				aux2=false;
 				aux3=true;//da paso a que se centre el mapa
 			}else if(aux3){
