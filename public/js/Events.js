@@ -155,6 +155,7 @@ const popUp=(hdr="",mj="",f=null,...args)=>{
 	$("#myModal").removeClass("fade");
 	if(f!==null)
 		f(args);
+}
+const closePopUp=()=>{
 	$("#myModal").addClass("fade");
 }
-
