@@ -21,6 +21,7 @@ const initMap=()=>{
 /**************Poner marcas************************/
 const pintarMarcas=(marcas)=>{
 	infoWindows=infoWindows.reduce((a,e)=>(e.close(),[]),[]);
+	popUp("Cargando la información","Un momento por favor");
 	marcas.forEach(pintarMarca);
 }
 

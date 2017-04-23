@@ -23,7 +23,7 @@ const init=()=>{
 				buscaMarcas();
 				aux=false;
 				aux=false;
-				popUp("Cargando la información","Un momento por favor",pintarMarcas,marcasObjs);
+				pintarMarcas(marcasObjs);
 				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
 				eventoInfoWindows();
