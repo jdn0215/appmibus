@@ -15,11 +15,9 @@ const init=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	addPopOver();
 	$("#"+botonAdd).click(()=>popOverAdd());
-	//$("#"+botonBuscar).click(()=>popOverBuscar());
+	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
-	/***/
-	$("#buscaRegistro").click(e=>$("#data")[0].className="");
-	/***/
+	
 	initMap();
 	setInterval(()=>{
 		if(current !== null && current !== undefined){ //evitar que haga feo hasta que todo este listo
@@ -31,7 +29,7 @@ const init=()=>{
 				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
 				//eventoInfoWindows();
-				$(".btIW").click(e=>eventoBtInfoW(e));
+				$(".btIW").click(e=>$("#data")[0].className="");
 				
 				aux2=false;
 				aux3=true;//da paso a que se centre el mapa
