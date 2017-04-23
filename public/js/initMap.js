@@ -37,7 +37,7 @@ const crearMarca=(marca,idx)=>{
 			lng:marca.lng
 		});
 	let contenido = marca.origen+" - "+marca.destino;
-	iw.setContent("<button class='btn btn-info' id='id"+idx+"' onclick='eventoBtInfoW(e)'>"+contenido+"</button>");
+	iw.setContent("<button class='btn btn-info btIW' id='id"+idx+"'>"+contenido+"</button>");
 	
 	iw.estado = marca.estado;
 	iw.info = marca.info;
