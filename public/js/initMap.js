@@ -121,10 +121,12 @@ const eventoInfoWindows=()=>{
 	let arr = getInfoWindows();
 	arr.forEach(e=>{
 		let key = e.id.split("id")[1];
+		console.log("Evento para "+key);
 		let marca = marcasObjs[key];
 		e.setAttribute("id","id"+key);
 		e.setAttribute("data-toggle","popover");
-		$("#id"+key).click(()=>{
+		$("#id"+key).click((evt)=>{
+			console.log("Evento llamado por "+evt.target.id);
 			let m = marcasObjs[key];
 			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
 			$("#dataOrigen")[0].innerHTML=("  "+m.origen);
