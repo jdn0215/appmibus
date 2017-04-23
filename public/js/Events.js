@@ -32,7 +32,10 @@ const init=()=>{
 				/*$(".btIW").click(e=>$("#data")[0].className="");
 				$('[style*="cursor: default"]').click(e=>$("#data")[0].className="");
 				document.getElementById("id19").click();*/
-				let iwa = document.getElementsByClassName('btIW');
+				let iwa;
+				do{
+					iwa = document.getElementsByClassName('btIW');
+				}while(iwa.length===0);
 				alert("recuperado los iw ");
 				for (let i = 0; i < iwa.length; i++) {
 					alert("evento en "+i);
