@@ -22,6 +22,7 @@ const initMap=()=>{
 const pintarMarcas=(marcas)=>{
 	infoWindows=infoWindows.reduce((a,e)=>(e.close(),[]),[]);
 	marcas.forEach(pintarMarca);
+	mapa.setCenter(current.position);
 }
 
 const pintarMarca=(marca,indice)=>{
@@ -36,8 +37,8 @@ const crearMarca=(marca,idx)=>{
 			lng:marca.lng
 		});
 	let contenido = marca.origen+" - "+marca.destino;
+	iw.setContent("<button class='btn btn-info btIW' id='id"+idx+"'>"+contenido+"</button>");
 	
-	iw.setContent("<button class='btn btn-info' id='id"+idx+"'>"+contenido+"</button>");
 	iw.estado = marca.estado;
 	iw.info = marca.info;
 	iw.index=idx;
@@ -116,26 +117,24 @@ const handleLocationError=(browserHasGeolocation, current, pos)=>{
 
 /********************manejo de InfoWindow***********************/
 const getInfoWindows=()=>  $(".btn-info").toArray();
-const eventoInfoWindows=()=>{
-	let arr = getInfoWindows();
-	arr.forEach(e=>{
-		let key = e.id.split("id")[1];
-		let marca = marcasObjs[key];
-		e.setAttribute("id","id"+key);
-		e.setAttribute("data-toggle","popover");
-		$("#id"+key).click(()=>{
-			let m = marcasObjs[key];
-			$("#dataUsuario")[0].innerHTML= ("  "+m.usuario);
-			$("#dataOrigen")[0].innerHTML=("  "+m.origen);
-			$("#dataDestino")[0].innerHTML=("  "+m.destino);
-			$("#dataHora")[0].innerHTML=(timeText(m.time));
-			$("#dataQueP")[0].innerHTML=("  "+m.estado);
-			$("#dataInfo")[0].innerHTML=("  "+m.info);
-			$("#data")[0].className="";
-		});
-	});
-}
 
+const eventoBtInfoW=(e)=>{
+	console.log("Evento llamado por "+e.target.id);
+	let key = e.target.id.split("id")[1];
+	fMensaje("Evento llamado por "+e.target.id);
+	let m = marcasObjs[key];
+	$("#dataUsuario").html("  "+m.usuario);
+	$("#dataOrigen").html("  "+m.origen);
+	$("#dataOrigen").addClass("fa fa-crosshairs");
+	$("#dataDestino").html("  "+m.destino);
+	$("#dataDestino").addClass("fa fa-arrow-right");
+	$("#dataHora").html(timeText(m.time));
+	$("#dataQueP").html("  "+m.estado);
+	$("#dataQueP").addClass("fa fa-bus");
+	$("#dataInfo").html("  "+m.info);
+	$("#dataInfo").addClass("fa fa-plus");
+	$("#data")[0].className="";
+}
 const timeText=(d)=>{
 	let a="";
 	let h=d.getHours();

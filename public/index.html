@@ -43,16 +43,12 @@
 		<div id="wrapper" class="noVisible">
 			<div id="map"></div>
 			
-			<div id="data" class="">
+			<div id="data" class="noVisible">
 				<table>
 					<tr>
-						<th>
-							<i class="fa fa-user-o"></i> 
-								<div id="dataUsuario">
-									Francisco Sanchez 
-								</div>
-								<p id="dataHora">3:55 pm</p>	
-						</th>
+						<th >
+							<div id="dataUsuario" <i class="fa fa-user-o">>Francisco Sanchez</div> 
+							<p id="dataHora">3:55 pm</p></th>
 						<th id="dataBoton"><button class="btn btn-danger" id="dataX">
 						<span class="glyphicon glyphicon-remove"></span>
 						</button>
@@ -60,14 +56,38 @@
 					</tr>
 					<tr>
 						<td COLSPAN="2" id="dataRuta">
-						<p id="dataOrigen"> <i class="fa fa-crosshairs"></i> Alajuela</p>
-						<p id="dataDestino"> <i class="fa fa-arrow-right"></i> San José</p>
+						<div id="dataOrigen"
+							<i class="fa fa-crosshairs"></i>
+						>Alajuela</div>
+						<div id="dataDestino"> <i class="fa fa-arrow-right"></i> San José</div>
 						</td>			
 					</tr>
-					<tr><td COLSPAN="2" id="dataQueP"><i class="fa fa-bus"></i>     choque</td></tr>
-					<tr><td COLSPAN="2" id="dataInfo"><i class="fa fa-plus" aria-hidden="true"></i>    bus no se va a mover</td></tr>
+					<tr><td COLSPAN="2"><div id="dataQueP"><i class="fa fa-bus"></i>choque</div></td></tr>
+					<tr><td COLSPAN="2"><div id="dataInfo"><i class="fa fa-plus" aria-hidden="true"></i>
+					bus no se va a mover</div></td></tr>
 				</table>
 			</div>
+			
+					<!---Popup --->
+		
+		<div id="popUp" class="noVisible" >
+				<table align="center">
+					<tr>
+						<th >
+							<div id="popHDR"></div>
+						</th>
+
+					</tr>
+					<tr>
+						<th >
+							<div id="popMj"></div>
+						</th>		
+					</tr>
+
+				</table>
+				
+		</div>
+			
 			
 			
 			<div id="panel">
@@ -78,7 +98,8 @@
 				<p id="txtMensaje">hola mundo</p>
 			</div>
 		</div>
-						
+
+			
 		<script>
 		   // Load the SDK asynchronously
 		  (function(d, s, id) {
