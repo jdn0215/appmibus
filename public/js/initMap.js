@@ -127,12 +127,12 @@ const eventoBtInfoW=(e)=>{
 	$("#dataOrigen").html("  "+m.origen);
 	$("#dataOrigen").addClass("fa fa-crosshairs");
 	$("#dataDestino").html("  "+m.destino);
-	$("#dataDestino").addclass("fa fa-arrow-right");
+	$("#dataDestino").addClass("fa fa-arrow-right");
 	$("#dataHora").html(timeText(m.time));
 	$("#dataQueP").html("  "+m.estado);
-	$("#dataQueP").addclass("fa fa-bus");
+	$("#dataQueP").addClass("fa fa-bus");
 	$("#dataInfo").html("  "+m.info);
-	$("#dataInfo").addclass("fa fa-plus");
+	$("#dataInfo").addClass("fa fa-plus");
 	$("#data")[0].className="";
 }
 const timeText=(d)=>{
