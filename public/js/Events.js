@@ -151,7 +151,7 @@ const fMensaje=(texto,delay=7000)=>{
 }
 
 const popUp=(hdr="",f=null,mj="",...args)=>{
-	$("#popHDR").html(hfr);
+	$("#popHDR").html(hdr);
 	$("#popMj").html(mj);
 	if(f!==null)
 		f(args);
