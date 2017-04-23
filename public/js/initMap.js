@@ -143,7 +143,7 @@ const eventoInfoWindows=()=>{
 			$("#dataInfo")[0].className="fa fa-plus";
 			$("#data")[0].className="";
 		});
-	});
+	};
 	fMensaje(mensaje);
 }
 
