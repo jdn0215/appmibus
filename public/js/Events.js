@@ -12,7 +12,6 @@ var aux3=false;
 /******************************************************/
 
 const init=()=>{
-	popUp("HOLA","MUNDO");
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	$("#"+botonAdd).click(()=>popOverAdd());
 	$("#"+botonBuscar).click(()=>popOverBuscar());
@@ -24,7 +23,7 @@ const init=()=>{
 				buscaMarcas();
 				aux=false;
 				aux=false;
-				pintarMarcas(marcasObjs);
+				popUp("Cargando la información","Un momento por favor",pintarMarcas,marcasObjs);
 				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
 				eventoInfoWindows();
@@ -153,7 +152,9 @@ const fMensaje=(texto,delay=7000)=>{
 const popUp=(hdr="",mj="",f=null,...args)=>{
 	$("#popHDR").html(hdr);
 	$("#popMj").html(mj);
+	$("#myModal").removeClass("fade");
 	if(f!==null)
 		f(args);
+	$("#myModal").addClass("fade");
 }
 
