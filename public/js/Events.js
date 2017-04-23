@@ -28,10 +28,6 @@ const init=()=>{
 				pintarMarcas(marcasObjs);
 				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
-				//eventoInfoWindows();
-				/*$(".btIW").click(e=>$("#data")[0].className="");
-				$('[style*="cursor: default"]').click(e=>$("#data")[0].className="");
-				document.getElementById("id19").click();*/
 				let iwa = document.getElementsByClassName('btIW');
 				for (let i = 0; i < iwa.length; i++) {
 					aux2=false;
