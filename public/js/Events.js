@@ -29,8 +29,18 @@ const init=()=>{
 				aux2=true;//Da paso para agregar eventos a las marcas
 			}else if(aux2){
 				//eventoInfoWindows();
-				$(".btIW").click(e=>$("#data")[0].className="");
+				/*$(".btIW").click(e=>$("#data")[0].className="");
 				$('[style*="cursor: default"]').click(e=>$("#data")[0].className="");
+				document.getElementById("id19").click();*/
+				let iwa = document.getElementsByClassName('btIW');
+				alert("recuperado los iw ");
+				for (let i = 0; i < iwa.length; i++) {
+					alert("evento en "+i);
+					iwa[i].addEventListener('click', e=>{
+						$("#data")[0].className="";
+					}, false);
+				}
+				alert("listo con los iw");
 				aux2=false;
 				aux3=true;//da paso a que se centre el mapa
 			}else if(aux3){
