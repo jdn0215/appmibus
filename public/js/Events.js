@@ -150,7 +150,7 @@ const fMensaje=(texto,delay=7000)=>{
 //	$("#"+mensaje).fadeOut("slow");
 }
 
-const popUp=(hdr="",f=null,mj="",...args)=>{
+const popUp=(hdr="",mj="",f=null,...args)=>{
 	$("#popHDR").html(hdr);
 	$("#popMj").html(mj);
 	if(f!==null)
