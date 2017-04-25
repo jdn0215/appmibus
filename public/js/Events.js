@@ -17,7 +17,8 @@ const init=()=>{
 	$("#"+botonAdd).click(()=>popOverAdd());
 	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
-	
+	$("#refresh").click(e=>get());
+	$("#ubicame").click(e=>mapa.setCenter(current.position););
 	initMap();
 	get();
 	addLogOut();
