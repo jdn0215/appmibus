@@ -159,5 +159,5 @@ const get=()=>{
 			mapa.setCenter(current.position);
 			aux3=false;
 		}
-	}
+	}else get();
 }
