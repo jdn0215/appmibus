@@ -8,7 +8,7 @@
 	var div_session = "<div id = 'facebook-session'>"+
 					  "<strong></strong>"+
 					  "<img>"+
-					  "<a href='#' id='logout' class ='btn btn-danger'>Cerrar sessión</a>"+
+					  "<a href='#' id='logout' class ='btn btn-danger'><span class='glyphicon glyphicon-log-out'></span></a>"+
 					  "</div>";
 
 	window.fbAsyncInit = function() {
