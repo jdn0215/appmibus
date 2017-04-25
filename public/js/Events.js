@@ -17,31 +17,8 @@ const init=()=>{
 	$("#"+botonAdd).click(()=>popOverAdd());
 	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
-	
 	initMap();
-	setInterval(()=>{
-		if(current !== null && current !== undefined){ //evitar que haga feo hasta que todo este listo
-			if(aux){
-				buscaMarcas();
-				aux=false;
-				aux=false;
-				pintarMarcas(marcasObjs);
-				aux2=true;//Da paso para agregar eventos a las marcas
-			}else if(aux2){
-				let iwa = document.getElementsByClassName('btIW');
-				for (let i = 0; i < iwa.length; i++) {
-					aux2=false;
-					aux3=true;//da paso a que se centre el mapa
-					iwa[i].addEventListener('click', e=>{
-						eventoBtInfoW(e);
-					}, false);
-				}		
-			}else if(aux3){
-				mapa.setCenter(current.position);
-				aux3=false;
-			}
-		}
-	},timeUpdate);
+	get();
 	addLogOut();
 };
 
@@ -158,4 +135,29 @@ const fMensaje=(texto,delay=7000)=>{
 	);
 
 //	$("#"+mensaje).fadeOut("slow");
+}
+const get=()=>{
+	aux  = true;
+	aux2 = false;
+	aux3 = false;
+	if(current !== null && current !== undefined){ //evitar que haga feo hasta que todo este listo
+		if(aux){
+			buscaMarcas();
+			aux=false;
+			pintarMarcas(marcasObjs);
+			aux2=true;//Da paso para agregar eventos a las marcas
+		}else if(aux2){
+			let iwa = document.getElementsByClassName('btIW');
+			for (let i = 0; i < iwa.length; i++) {
+				aux2=false;
+				aux3=true;//da paso a que se centre el mapa
+				iwa[i].addEventListener('click', e=>{
+					eventoBtInfoW(e);
+				}, false);
+			}		
+		}else if(aux3){
+			mapa.setCenter(current.position);
+			aux3=false;
+		}
+	}
 }
