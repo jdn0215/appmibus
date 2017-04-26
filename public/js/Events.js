@@ -56,7 +56,7 @@ const addLogOut=()=>{
 const addPopOver=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	$("#"+botonAdd)[0].setAttribute("data-toggle","popover");
-	$("#"+botonAdd)[0].setAttribute("title","Añadir un registro");
+	$("#"+botonAdd)[0].setAttribute("title","<strong>Añadir un registro</strong>");
 	$("#"+botonAdd)[0].setAttribute("data-placement","top");
 	$("#"+botonAdd)[0].setAttribute("data-trigger","click");
 	$("#"+botonAdd).popover({
