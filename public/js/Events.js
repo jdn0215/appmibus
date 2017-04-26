@@ -14,7 +14,7 @@ var aux3=false;
 const init=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	addPopOver();
-	$("#"+botonAdd).click(()=>$("#"+botonAdd).popOver("show"));
+	$("#"+botonAdd).click(()=>$("#"+botonAdd).popover("show"));
 	$("#"+botonAdd).click();
 	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
