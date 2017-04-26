@@ -56,15 +56,15 @@ const addLogOut=()=>{
 
 
 const addPopOver=()=>{
-	$("#"+botonAdd).popover({
+	
+}
+
+const popOverAdd=()=>{
+	$("#"+botonAdd).popover("show",{
 		html:true,
 		placement:'top',
 		callback:()=>{initEventsAdd();}
 	});
-}
-
-const popOverAdd=()=>{
-	$("#"+botonAdd).popover("show");
 };
 
 const popOverBuscar=()=>{
