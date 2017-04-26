@@ -15,6 +15,7 @@ const init=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	addPopOver();
 	$("#"+botonAdd).click(()=>popOverAdd());
+	$("#"+botonAdd).click();
 	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	$("#refresh").click(e=>get());
@@ -56,17 +57,13 @@ const addLogOut=()=>{
 
 
 const addPopOver=()=>{
-	
-}
-
-const popOverAdd=()=>{
 	$("#"+botonAdd).popover({
 		html:true,
 		placement:'top',
 		callback:()=>{initEventsAdd();}
 	});
-	$("#"+botonAdd).popover("show");
-};
+}
+
 
 const popOverBuscar=()=>{
 	fMensaje("TODO");
