@@ -13,7 +13,6 @@ var aux3=false;
 
 const init=()=>{
 	addPopOver();
-	$("#"+botonAdd).click(()=>$("#"+botonAdd).popover("show"));
 	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	$("#refresh").click(e=>get());
@@ -61,7 +60,8 @@ const addPopOver=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-placement","top");
 	$("#"+botonAdd)[0].setAttribute("data-trigger","click");
 	$("#"+botonAdd).popover({
-		callback:()=>{initEventsAdd();}
+		callback:()=>{initEventsAdd();},
+		html:true
 	});
 }
 
