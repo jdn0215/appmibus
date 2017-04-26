@@ -60,11 +60,12 @@ const addPopOver=()=>{
 }
 
 const popOverAdd=()=>{
-	$("#"+botonAdd).popover("show",{
+	$("#"+botonAdd).popover({
 		html:true,
 		placement:'top',
 		callback:()=>{initEventsAdd();}
 	});
+	$("#"+botonAdd).popover("show");
 };
 
 const popOverBuscar=()=>{
