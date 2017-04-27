@@ -65,4 +65,20 @@ const forms={
 		<button id="addCancel" class="botonPanel">Cancelar</button>
 	</div>
 	`
+	formSearch:`
+	<div id="searchBus">
+		<label for="searchOrigen">
+			Origen del bus
+			<input id="searchOrigen"></input>
+		</label><br/>
+
+		<label for="searchDestion">
+			Destino del bus
+			<input id="searchDestion"></input>
+		</label><br/>
+
+		<button id="searchSearch" class="botonPanel">Buscar</button>
+		<button id="searchCancel" class="botonPanel">Cancelar</button>
+	</div>
+	`
 };
