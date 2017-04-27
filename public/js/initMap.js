@@ -162,5 +162,21 @@ const nuevasMarcas=(args=[])=>{
 	return hubieronCambios;
 }
 
+const filtrar=(a="",b="")=>{
+	a = convertir(a);
+	b = convertir(b);
+	marcasObjs.forEach(
+		(e,i)=>verificaMarca(e,i,a,b);
+	);
+}
 
+const verificaMarca=(marca,i,a,b)=>{
+	if(verificar(marca,a,b))
+		infoWindows[i].close();
+}
+
+const verificar=(marca,a,b)=>marca.origen.indexOf(a)!==-1 && marca.destino.indexOf(b)!==-1;
+
+
+const convertir=a=> a.replace('á','a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','U').toUpperCase();
 

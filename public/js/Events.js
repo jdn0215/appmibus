@@ -106,7 +106,7 @@ const addReporte=()=>{
 };
 
 const seaReporte=()=>{
-	fMensaje("TODO");
+	filtrar($("#seaOrigen").val(),$("#seaDestion").val());
 	$("#seaCancel").click();
 }; 
 
