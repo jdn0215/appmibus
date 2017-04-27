@@ -165,10 +165,7 @@ const nuevasMarcas=(args=[])=>{
 const filtrar=(_a="",_b="")=>{
 	if(_a==="" && _b===_a)
 		return get();
-	get((args)=>{
-		let a=args[0],b = args[1]
-		a = a || "";
-		b = b || ""
+	get((a,b)=>{
 		a = convertir(a);
 		b = convertir(b);
 		marcasObjs.forEach(
