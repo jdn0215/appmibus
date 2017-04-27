@@ -175,7 +175,8 @@ const verificaMarca=(marca,i,a,b)=>{
 		infoWindows[i].close();
 }
 
-const verificar=(marca,a,b)=>convertir(marca.origen).indexOf(a)!==-1 || convertir(marca.destino).indexOf(b)!==-1;
+const verificar=(marca,a,b)=>
+	(b!=="" && convertir(marca.origen).indexOf(a)!==-1)|| (a!==""&&convertir(marca.destino).indexOf(b)!==-1);
 
 
 const convertir=a=> a.replace('á','a').replace('é','e').replace('í','i').replace('ó','o').replace('ú','U').toUpperCase();
