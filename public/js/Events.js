@@ -14,7 +14,6 @@ var aux3=false;
 const init=()=>{
 	addPopOver();
 	popOverBuscar();
-//	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	$("#refresh").click(e=>get());
 	$("#ubicame").click(e=>mapa.setCenter(current.position));
@@ -61,7 +60,7 @@ const addPopOver=()=>{
 	$("#"+botonAdd)[0].setAttribute("data-placement","top");
 	$("#"+botonAdd)[0].setAttribute("data-trigger","click");
 	$("#"+botonAdd).popover({
-		callback:()=>{initEventsAdd();},
+		callback:()=>initEventsAdd(),
 		html:true
 	});
 }
@@ -74,19 +73,19 @@ const popOverBuscar=()=>{
 	$("#"+botonBuscar)[0].setAttribute("data-placement","top");
 	$("#"+botonBuscar)[0].setAttribute("data-trigger","click");
 	$("#"+botonBuscar).popover({
-		callback:()=>{initEventsSea();},
+		callback:()=>initEventsSea(),
 		html:true
 	});
 }
 
 const initEventsAdd=()=>{
 	$("#addAdd").click(()=>addReporte());
-	$("#addCancel").click(()=> $("#"+botonAdd).popover("destroy"));
+	$("#addCancel").click(()=> $("#"+botonAdd).popover("hide"));
 };
 
 const initEventsSea=()=>{
 	$("#seaSea").click(()=>seaReporte()); 
-	$("#seaCancel").click(()=> $("#"+botonBuscar).popover("destroy"));
+	$("#seaCancel").click(()=> $("#"+botonBuscar).popover("hide"));
 };
 
 const addReporte=()=>{
