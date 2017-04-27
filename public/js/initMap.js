@@ -171,7 +171,7 @@ const filtrar=(a="",b="")=>{
 }
 
 const verificaMarca=(marca,i,a,b)=>{
-	if(verificar(marca,a,b))
+	if(!verificar(marca,a,b))
 		infoWindows[i].close();
 }
 
