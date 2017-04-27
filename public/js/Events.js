@@ -12,14 +12,8 @@ var aux3=false;
 /******************************************************/
 
 const init=()=>{
-	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
 	addPopOver();
-	$("#"+botonAdd).click(()=>popOverAdd());
-
-	$("#"+botonBuscar)[0].setAttribute("data-content",forms.formSearch);
-	searchPopOver();
-	$("#"+botonBuscar).click(()=>popOverSearch());
-	
+	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	$("#refresh").click(e=>get());
 	$("#ubicame").click(e=>mapa.setCenter(current.position));
@@ -27,6 +21,7 @@ const init=()=>{
 	get();
 	addLogOut();
 };
+
 
 const buscaMarcas=()=>{
 	proxy.proxy("load",res=>{
