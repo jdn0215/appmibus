@@ -38,7 +38,7 @@ const responseStatusMin=200,
 	
 const forms={	
 	formAdd:`
-	<div id="addReporte">
+	<div id="addReporte" class="popOverForm">
 		<label for="addOrigen">
 			Origen del bus
 			<input id="addOrigen"></input>
@@ -67,7 +67,7 @@ const forms={
 	`
 	
 	,formSea:`
-		<div id="seaReporte">
+		<div id="seaReporte" class="popOverForm">
 		 <label for="seaOrigen">
 			 Origen del bus
 			 <input id="seaOrigen"></input>

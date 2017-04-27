@@ -15,14 +15,14 @@
 }
 
 
-#addReporte *{
+.popOverForm *{
 	border-radius:8px;
 	font-weight:none;
 }
-#addReporte.ipunt{
+.popOverForm ipunt{
 	text-transform: capitalize;
 }
-#addReporte button{
+.popOverForm button{
 	box-shadow:none;
 }
 textarea {
