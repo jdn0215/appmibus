@@ -162,14 +162,16 @@ const nuevasMarcas=(args=[])=>{
 	return hubieronCambios;
 }
 
-const filtrar=(a="",b="")=>{
-	if(a==="" && b===a)
+const filtrar=(_a="",_b="")=>{
+	if(_a==="" && _b===_a)
 		return get();
-	a = convertir(a);
-	b = convertir(b);
-	marcasObjs.forEach(
-		(e,i)=>verificaMarca(e,i,a,b)
-	);
+	get((a,b)=>{
+		a = convertir(a);
+		b = convertir(b);
+		marcasObjs.forEach(
+			(e,i)=>verificaMarca(e,i,a,b)
+		);
+	},_a,_b);
 }
 
 const verificaMarca=(marca,i,a,b)=>{

@@ -174,7 +174,7 @@ const fMensaje=(texto,delay=7000)=>{
 
 //	$("#"+mensaje).fadeOut("slow");
 }
-const get=()=>{
+const get=(callback=null,a,b)=>{
 	aux = true;
 	aux2 = false;
 	aux3 = false;
@@ -198,6 +198,8 @@ const get=()=>{
 			}else if(aux3){
 				mapa.setCenter(current.position);
 				aux3=false;
+				if(callback!== null)
+					callback(a,b);
 				clearInterval(interval);
 			}
 		}
