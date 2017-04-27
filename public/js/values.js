@@ -61,8 +61,8 @@ const forms={
 					  cols="25"
 			></textarea>
 		</label><br/>
-		<button id="addAdd" class="botonPanel">Reportar</button>
-		<button id="addCancel" class="botonPanel">Cancelar</button>
+		<button id="addAdd" class="botonPanel btn-info">Reportar</button>
+		<button id="addCancel" class="botonPanel btn-danger">Cancelar</button>
 	</div>
 	`
 	
@@ -77,8 +77,8 @@ const forms={
 			Destino del bus
 			<input id="seaDestion"></input>
 		</label><br/>
-		<button id="seaSea" class="botonPanel">Buscar</button>
-		<button id="seaCancel" class="botonPanel">Cancelar</button>
+		<button id="seaSea" class="botonPanel btn-info">Buscar</button>
+		<button id="seaCancel" class="botonPanel btn-danger">Cancelar</button>
 	</div>
 	`
 };
