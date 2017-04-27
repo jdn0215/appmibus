@@ -88,7 +88,7 @@ const initEventsAdd=()=>{
 };
 
 const initEventsSea=()=>{
-	$("#seaSea").click(()=>seaReporte());
+	/* $("#seaSea").click(()=>seaReporte()); */
 	$("#seaCancel").click(()=> $("#"+botonBuscar)[0].click());
 	$("#seaOrigen").focus(()=>window.scrollTo(0, 0));
 	$("#seaDestion").focus(()=>window.scrollTo(0, 0));
@@ -111,7 +111,7 @@ const addReporte=()=>{
 	$("#addCancel")[0].click();
 };
 
-const seaReporte=()=>{
+/* const seaReporte=()=>{
 	let reporte = createSeaReporte();
 	if(reporte === false ) return;
 	proxy.proxy('save',res=>{
@@ -126,7 +126,7 @@ const seaReporte=()=>{
 	aux = true;
 	aux2 = true;
 	$("#seaCancel")[0].click();
-};
+}; */
 
 
 ///////////////////////***creacíon del reporte****************////////////////////
@@ -143,7 +143,7 @@ const createReporte=()=>
 		localStorage.getItem(USER_NAME)
 	):false;
 	
-const createSeaReporte=()=>
+/* const createSeaReporte=()=>
 	validarSea()?
 	new Marca(
 		current.position.lat(),
@@ -152,7 +152,7 @@ const createSeaReporte=()=>
 		$("#SeaDestion").val(),
 		null,
 		localStorage.getItem(USER_NAME)
-	):false;
+	):false; */
 	
 const validar=()=>{
 	let inputs=["addOrigen","addDestion","addQuePasa"];
@@ -166,7 +166,7 @@ const validar=()=>{
 	return result;
 }	
 
-const validarSea=()=>{
+/* const validarSea=()=>{
 	let inputs=["seaOrigen","seaDestion"];
 	let result = true;
 	inputs.forEach(e=>{
@@ -176,7 +176,7 @@ const validarSea=()=>{
 		}else changeColorBorder(e,true);
 	});
 	return result;
-}	
+} */	
 
 	
 const changeColorBorder=(id,state=false)=> $("#"+id)[0].style=state?"":"border:medium double red;";
