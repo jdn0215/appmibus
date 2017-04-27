@@ -66,7 +66,7 @@ const forms={
 	</div>
 	`
 	
-	 formSea:`
+	,formSea:`
 		<div id="seaReporte">
 		 <label for="seaOrigen">
 			 Origen del bus
