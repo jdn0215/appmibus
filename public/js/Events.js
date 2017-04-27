@@ -13,7 +13,8 @@ var aux3=false;
 
 const init=()=>{
 	addPopOver();
-	$("#"+botonBuscar).click(()=>popOverBuscar());
+	popOverBuscar();
+//	$("#"+botonBuscar).click(()=>popOverBuscar());
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	$("#refresh").click(e=>get());
 	$("#ubicame").click(e=>mapa.setCenter(current.position));
@@ -67,32 +68,26 @@ const addPopOver=()=>{
 
 
 const popOverBuscar=()=>{
-	// $("#"+botonBuscar)[0].setAttribute("data-content",forms.formSea);
-	// $("#"+botonBuscar)[0].setAttribute("data-toggle","popover");
-	// $("#"+botonBuscar)[0].setAttribute("title","<strong>Buscar un registro</strong>");
-	// $("#"+botonBuscar)[0].setAttribute("data-placement","top");
-	// $("#"+botonBuscar)[0].setAttribute("data-trigger","click");
-	// $("#"+botonBuscar).popover({
-		// callback:()=>{initEventsSea();},
-		// html:true
-	// });
+	$("#"+botonBuscar)[0].setAttribute("data-content",forms.formSea);
+	$("#"+botonBuscar)[0].setAttribute("data-toggle","popover");
+	$("#"+botonBuscar)[0].setAttribute("title","<strong>Buscar un registro</strong>");
+	$("#"+botonBuscar)[0].setAttribute("data-placement","top");
+	$("#"+botonBuscar)[0].setAttribute("data-trigger","click");
+	$("#"+botonBuscar).popover({
+		callback:()=>{initEventsSea();},
+		html:true
+	});
 }
 
 const initEventsAdd=()=>{
 	$("#addAdd").click(()=>addReporte());
-	$("#addCancel").click(()=> $("#"+botonAdd)[0].click());
-	$("#addOrigen").focus(()=>window.scrollTo(0, 0));
-	$("#addDestion").focus(()=>window.scrollTo(0, 0));
-	$("#addQuePasa").focus(()=>window.scrollTo(0, 0));
-	$("#addExtra").focus(()=>window.scrollTo(0, 0));
+	$("#addCancel").click(()=> $("#"+botonAdd).popover("destroy"));
 };
 
-// const initEventsSea=()=>{
-	// $("#seaSea").click(()=>seaReporte()); 
-	// $("#seaCancel").click(()=> $("#"+botonBuscar)[0].click());
-	// $("#seaOrigen").focus(()=>window.scrollTo(0, 0));
-	// $("#seaDestion").focus(()=>window.scrollTo(0, 0));
-// };
+const initEventsSea=()=>{
+	$("#seaSea").click(()=>seaReporte()); 
+	$("#seaCancel").click(()=> $("#"+botonBuscar).popover("destroy"));
+};
 
 const addReporte=()=>{
 	let reporte = createReporte();
@@ -111,22 +106,10 @@ const addReporte=()=>{
 	$("#addCancel")[0].click();
 };
 
-/* const seaReporte=()=>{
-	let reporte = createSeaReporte();
-	if(reporte === false ) return;
-	proxy.proxy('save',res=>{
-		let r = res.mj;
-		fMensaje(     r===success          ? mj_Add_succes
-				:     r===errConectClientM ? mj_Add_ERR_DB
-				:     r===errTrans         ? mj_Add_ERR_SR
-				:                            mj_Add_ERR_UNK
-				);
-	},reporte);
-	marcasObjs.push(reporte);
-	aux = true;
-	aux2 = true;
-	$("#seaCancel")[0].click();
-}; */
+const seaReporte=()=>{
+	fMensaje("TODO");
+	$("#seaCancel").click();
+}; 
 
 
 ///////////////////////***creacíon del reporte****************////////////////////
