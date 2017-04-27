@@ -55,12 +55,12 @@ const addLogOut=()=>{
 
 
 const addPopOver=()=>{
-	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
-	$("#"+botonAdd)[0].setAttribute("data-toggle","popover");
-	$("#"+botonAdd)[0].setAttribute("title","<strong>Añadir un registro</strong>");
-	$("#"+botonAdd)[0].setAttribute("data-placement","top");
-	$("#"+botonAdd)[0].setAttribute("data-trigger","click");
-	$("#"+botonAdd).popover({
+	$("#addRegistro")[0].setAttribute("data-content",forms.formAdd);
+	$("#addRegistro")[0].setAttribute("data-toggle","popover");
+	$("#addRegistro")[0].setAttribute("title","<strong>Añadir un registro</strong>");
+	$("#addRegistro")[0].setAttribute("data-placement","top");
+	$("#addRegistro")[0].setAttribute("data-trigger","click");
+	$("#addRegistro").popover({
 		callback:()=>{initEventsAdd();},
 		html:true
 	});
