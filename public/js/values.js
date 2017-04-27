@@ -65,20 +65,4 @@ const forms={
 		<button id="addCancel" class="botonPanel">Cancelar</button>
 	</div>
 	`
-	
-	formSea:`
-	<div id="seaReporte">
-		<label for="seaOrigen">
-			Origen del bus
-			<input id="seaOrigen"></input>
-		</label><br/>
-
-		<label for="seaDestion">
-			Destino del bus
-			<input id="seaDestion"></input>
-		</label><br/>	
-		<button id="seaSea" class="botonPanel">Buscar</button>
-		<button id="seaCancel" class="botonPanel">Cancelar</button>
-	</div>
-	`
 };
