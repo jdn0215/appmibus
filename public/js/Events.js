@@ -22,7 +22,6 @@ const init=()=>{
 	addLogOut();
 };
 
-
 const buscaMarcas=()=>{
 	proxy.proxy("load",res=>{
 		if(Array.isArray(res)){
@@ -55,27 +54,20 @@ const addLogOut=()=>{
 
 
 const addPopOver=()=>{
+	$("#"+botonAdd)[0].setAttribute("data-content",forms.formAdd);
+	$("#"+botonAdd)[0].setAttribute("data-toggle","popover");
+	$("#"+botonAdd)[0].setAttribute("title","<strong>Añadir un registro</strong>");
+	$("#"+botonAdd)[0].setAttribute("data-placement","top");
+	$("#"+botonAdd)[0].setAttribute("data-trigger","click");
 	$("#"+botonAdd).popover({
-		html:true,
-		placement:'top',
-		callback:()=>{initEventsAdd();}
+		callback:()=>{initEventsAdd();},
+		html:true
 	});
 }
 
-const popOverAdd=()=>{
-	$("#"+botonAdd).popover("show");
-};
 
-const popOverSearch=()=>{
-	$("#"+botonBuscar).popover("show");
-};
-
-const searchPopOver=()=>{
-		$("#"+botonBuscar).popover({
-		html:true,
-		placement:'top',
-		callback:()=>{initEventsSearch();}
-	});
+const popOverBuscar=()=>{
+	fMensaje("TODO");
 }
 
 const initEventsAdd=()=>{
@@ -85,13 +77,6 @@ const initEventsAdd=()=>{
 	$("#addDestion").focus(()=>window.scrollTo(0, 0));
 	$("#addQuePasa").focus(()=>window.scrollTo(0, 0));
 	$("#addExtra").focus(()=>window.scrollTo(0, 0));
-};
-
-const initEventsSearch=()=>{
-	$("#searchSearch").click(()=>addReporte());
-	$("#searchCancel").click(()=> $("#"+botonAdd)[0].click());
-	$("#serachOrigen").focus(()=>window.scrollTo(0, 0));
-	$("#serachDestion").focus(()=>window.scrollTo(0, 0));
 };
 
 const addReporte=()=>{
@@ -109,23 +94,6 @@ const addReporte=()=>{
 	aux = true;
 	aux2 = true;
 	$("#addCancel")[0].click();
-};
-
-const addReporteSearch=()=>{
-	let reporte = createReporteSearch();
-	if(reporte === false ) return;
-	proxy.proxy('save',res=>{
-		let r = res.mj;
-		fMensaje(     r===success          ? mj_Add_succes
-				:     r===errConectClientM ? mj_Add_ERR_DB
-				:     r===errTrans         ? mj_Add_ERR_SR
-				:                            mj_Add_ERR_UNK
-				);
-	},reporte);
-	marcasObjs.push(reporte);
-	aux = true;
-	aux2 = true;
-	$("#searchCancel")[0].click();
 };
 
 
@@ -154,29 +122,6 @@ const validar=()=>{
 	});
 	return result;
 }	
-
-const createReporteSearch=()=>
-	validarSearch()?
-	new Marca(
-		current.position.lat(),
-		current.position.lng(),
-		$("#searchOrigen").val(),
-		$("#searchDestion").val(),
-		null,
-		localStorage.getItem(USER_NAME)
-	):false;
-	
-const validarSearch=()=>{
-	let inputs=["searchOrigen","searchDestion"];
-	let result = true;
-	inputs.forEach(e=>{
-		if($("#"+e).val()===""){
-			result = false;
-			changeColorBorder(e);
-		}else changeColorBorder(e,true);
-	});
-	return result;
-}
 
 	
 const changeColorBorder=(id,state=false)=> $("#"+id)[0].style=state?"":"border:medium double red;";
