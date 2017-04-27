@@ -166,7 +166,7 @@ const filtrar=(a="",b="")=>{
 	a = convertir(a);
 	b = convertir(b);
 	marcasObjs.forEach(
-		(e,i)=>verificaMarca(e,i,a,b);
+		(e,i)=>verificaMarca(e,i,a,b)
 	);
 }
 
