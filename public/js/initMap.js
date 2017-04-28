@@ -183,8 +183,8 @@ const verificar=(marca,a,b)=>{
 	if(b==="")
 		return convertir(marca.origen).indexOf(a)!==-1;
 	if(a==="")
-		return convertir(marca.destino).indexOf(b)===-1;
-	return convertir(marca.origen).indexOf(a)!==-1 && convertir(marca.destino).indexOf(b)===-1;
+		return convertir(marca.destino).indexOf(b)!==-1;
+	return convertir(marca.origen).indexOf(a)!==-1 && convertir(marca.destino).indexOf(b)!==-1;
 }
 
 
