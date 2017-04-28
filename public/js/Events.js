@@ -19,7 +19,7 @@ const init=()=>{
 	$("#ubicame").click(e=>{
 			mapa.setCenter(current.position);
 			let infowindow = new google.maps.InfoWindow({
-				content: '<strong>¡ESTAS AQUÍ!</strong>'
+				content: '<strong>pss..¡ESTAS AQUÍ!</strong>'
 			});
 			infowindow.open(mapa,current);
 		});
