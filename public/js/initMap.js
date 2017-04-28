@@ -163,7 +163,7 @@ const nuevasMarcas=(args=[])=>{
 }
 
 const filtrar=(a="",b="")=>{
-	if(_a==="" && _b===_a)
+	if(a==="" && b===a)
 		return get();
 	a = convertir(a);
 	b = convertir(b);
