@@ -38,7 +38,7 @@ const responseStatusMin=200,
 	
 const forms={	
 	formAdd:`
-	<div id="addReporte" class="popOverForm">
+	<div id="addReporte" class="popOverForm Fscroll">
 		<label for="addOrigen">
 			Origen del bus
 			<input id="addOrigen"></input>
