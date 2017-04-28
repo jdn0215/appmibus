@@ -16,7 +16,13 @@ const init=()=>{
 	popOverBuscar();
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	$("#refresh").click(e=>get());
-	$("#ubicame").click(e=>mapa.setCenter(current.position));
+	$("#ubicame").click(e=>{
+			mapa.setCenter(current.position);
+			let infowindow = new google.maps.InfoWindow({
+				content: '<strong>¡ESTAS AQUÍ!</strong>'
+			});
+			infowindow.open(mapa,current);
+		});
 	initMap();
 	get();
 	addLogOut();
