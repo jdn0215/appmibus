@@ -9,6 +9,7 @@ $.fn.popover.Constructor.prototype.show = function () {
 var aux=true;
 var aux2=false;
 var aux3=false;
+let user_name="unloged";
 /******************************************************/
 
 const init=()=>{
@@ -128,7 +129,7 @@ const createReporte=()=>
 		$("#addQuePasa").val(),
 		$("#addExtra").val(),
 		null,
-		localStorage.getItem(USER_NAME)
+		user_name
 	):false;
 	
 /* const createSeaReporte=()=>
@@ -210,4 +211,17 @@ const get=(callback=null,a,b)=>{
 			}
 		}
 	},timeUpdate);	
+};
+
+
+const initDataUser=()=>{
+	let id    = localStorage.getItem(USER_ID);
+	user_name = localStorage.getItem(USER_NAME);
+	let url   = 'https://graph.facebook.com/'+id+'/picture?type=normal';
+	fetch(url).then(res=>{
+		let _img = $("#img_loged")[0];
+		_img.setAttribute("src",res.url);
+	});
+	
 }
+
