@@ -15,6 +15,7 @@ let user_name="unloged";
 const init=()=>{
 	addPopOver();
 	initDataUser();
+	saludar();
 	popOverBuscar();
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	$("#refresh").click(e=>get());
@@ -225,4 +226,32 @@ const initDataUser=()=>{
 	});
 	$("#user_loged").html(user_name);
 }
+const saludar=()=>
+	fMensaje(seleccionarSaludo()+prepararSaludo());
+
+const prepararSaludo=()=>{
+	let mj="";
+	let names = user_name.split(' ');
+	switch(names.length){
+		case 1:
+		case 2:mj = names[0];break;
+		case 3:mj = names[0]+' '+names[1];break;
+		default: mj = names[1];
+	}
+	return mj;
+}
+const seleccionarSaludo=()=>{
+	let a = new Date();
+	if(a.getHours()>=12){
+		if(a.getMinutes()%2===0){
+			return "¡Buenas! "
+		}else return "Buenas tardes ";
+	}else{
+		if(a.getMinutes()%2===0){
+			return "Bienvenido! "
+		}else return "Buenos días ";
+	}
+}
+
+
 
