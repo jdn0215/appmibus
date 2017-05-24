@@ -1,11 +1,11 @@
 #panel{
-	position:fixed;
 	left:0%;
 	bottom:10%;
 	display:inline-block;
 	width:100%;
 }
 #loged{
+	position:fixed;
 	top:5%;
 	right:5%;
 	background-color:red;
