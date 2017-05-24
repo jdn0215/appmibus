@@ -222,6 +222,6 @@ const initDataUser=()=>{
 		let _img = $("#img_loged")[0];
 		_img.setAttribute("src",res.url);
 	});
-	
+	$("#user_loged").html(user_name);
 }
 
