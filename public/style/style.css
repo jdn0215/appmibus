@@ -9,6 +9,7 @@
 	top:5%;
 	right:5%;
 	background-color:rgba(227,206,246,.4);
+	 border-radius:5%;
 }
 #user_loged{
 	font-weight:bold;
