@@ -5,5 +5,13 @@
 	display:inline-block;
 	width:100%;
 }
+#loged{
+	top:5%;
+	right:5%;
+	background-color:red;
+}
+#img_loged{
+	width:80%;
+}
 
 
