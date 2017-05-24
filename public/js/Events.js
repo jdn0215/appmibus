@@ -244,11 +244,11 @@ const seleccionarSaludo=()=>{
 	let a = new Date();
 	if(a.getHours()>=12){
 		if(a.getMinutes()%2===0){
-			return "¡Buenas! "
-		}else return "Buenas tardes ";
+			return "Saludos "
+		}else return "Buenas tardes  ";
 	}else{
 		if(a.getMinutes()%2===0){
-			return "Bienvenido! "
+			return "Bienvenido "
 		}else return "Buenos días ";
 	}
 }
