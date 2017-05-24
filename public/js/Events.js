@@ -14,6 +14,7 @@ let user_name="unloged";
 
 const init=()=>{
 	addPopOver();
+	initDataUser();
 	popOverBuscar();
 	$("#dataX").click(()=>$("#data")[0].className="noVisible");
 	$("#refresh").click(e=>get());
