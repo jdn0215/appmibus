@@ -218,7 +218,7 @@ const get=(callback=null,a,b)=>{
 const initDataUser=()=>{
 	let id    = localStorage.getItem(USER_ID);
 	user_name = localStorage.getItem(USER_NAME);
-	let url   = 'https://graph.facebook.com/'+id+'/picture?type=normal';
+	let url   = 'https://graph.facebook.com/'+id+'/picture?type=small';
 	fetch(url).then(res=>{
 		let _img = $("#img_loged")[0];
 		_img.setAttribute("src",res.url);
